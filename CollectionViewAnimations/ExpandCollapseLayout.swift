@@ -45,7 +45,6 @@ class ExpandCollapseLayout: UICollectionViewLayout {
                 )
 
                 attributes.frame = CGRectMake(0, y, width, size.height)
-                attributes.alpha = 1.0
 
                 currentAttributes.append(attributes)
 
