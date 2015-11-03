@@ -10,6 +10,8 @@ import UIKit
 
 class ExpandCollapseLayout: UICollectionViewLayout {
 
+    // MARK: - Helper Types
+
     struct SectionLimit {
         let top: CGFloat
         let bottom: CGFloat
@@ -25,7 +27,7 @@ class ExpandCollapseLayout: UICollectionViewLayout {
 
     var currentSectionLimits: [SectionLimit] = []
 
-    let sectionHeight: CGFloat = 40
+    let sectionHeaderHeight: CGFloat = 40
 
     var contentSize = CGSizeZero
     var selectedCellIndexPath: NSIndexPath?
@@ -35,16 +37,12 @@ class ExpandCollapseLayout: UICollectionViewLayout {
     override func prepareLayout() {
         super.prepareLayout()
 
-        print("-------------- PREPARE LAYOUT ---------------")
-
         prepareContentCellAttributes()
         prepareSectionHeaderAttributes()
     }
 
     private func prepareContentCellAttributes() {
         guard let collectionView = collectionView else { return }
-
-        print("prepareContentCellAttributes")
 
         // RESET
 
@@ -63,7 +61,7 @@ class ExpandCollapseLayout: UICollectionViewLayout {
             let itemCount = collectionView.numberOfItemsInSection(sectionIndex)
             let sectionTop = y
 
-            y += sectionHeight
+            y += sectionHeaderHeight
 
             var attributesList: [UICollectionViewLayoutAttributes] = []
 
@@ -94,8 +92,6 @@ class ExpandCollapseLayout: UICollectionViewLayout {
     private func prepareSectionHeaderAttributes() {
         guard let collectionView = collectionView else { return }
 
-        print("prepareSectionHeaderAttributes")
-
         // RESET
 
         previousSectionAttributes = currentSectionAttributes
@@ -106,7 +102,7 @@ class ExpandCollapseLayout: UICollectionViewLayout {
         let width = collectionView.bounds.size.width
 
         let collectionViewTop = collectionView.contentOffset.y // Stuck
-        let aboveCollectionViewTop = collectionViewTop - sectionHeight
+        let aboveCollectionViewTop = collectionViewTop - sectionHeaderHeight
 
         for sectionIndex in 0..<collectionView.numberOfSections() {
             let sectionLimit = currentSectionLimits[sectionIndex]
@@ -121,21 +117,17 @@ class ExpandCollapseLayout: UICollectionViewLayout {
             )
 
             attributes.zIndex = 1
-            attributes.frame = CGRectMake(0, sectionLimit.top, width, sectionHeight)
+            attributes.frame = CGRectMake(0, sectionLimit.top, width, sectionHeaderHeight)
 
             // SET THE Y-POSITION
 
             let sectionTop = sectionLimit.top
-            let sectionBottom = sectionLimit.bottom - sectionHeight
+            let sectionBottom = sectionLimit.bottom - sectionHeaderHeight
 
             attributes.frame.origin.y = min(
                 max(sectionTop, collectionViewTop),
                 max(sectionBottom, aboveCollectionViewTop)
             )
-
-            if sectionIndex == collectionView.numberOfSections() - 1 {
-                print("Last Section Attributes: \(attributes.frame)")
-            }
 
             currentSectionAttributes.append(attributes)
         }
@@ -180,13 +172,7 @@ class ExpandCollapseLayout: UICollectionViewLayout {
         atIndexPath elementIndexPath: NSIndexPath)
         -> UICollectionViewLayoutAttributes?
     {
-        let attributes = previousSectionAttributes[elementIndexPath.section]
-
-        if elementIndexPath.section == 3 {
-            print("initial: \(elementIndexPath.section) \(attributes.frame)")
-        }
-
-        return attributes
+        return previousSectionAttributes[elementIndexPath.section]
     }
 
     override func layoutAttributesForSupplementaryViewOfKind(
@@ -194,13 +180,7 @@ class ExpandCollapseLayout: UICollectionViewLayout {
         atIndexPath indexPath: NSIndexPath)
         -> UICollectionViewLayoutAttributes?
     {
-        let attributes = currentSectionAttributes[indexPath.section]
-
-        if indexPath.section == 3 {
-            print("layout: \(indexPath.section) \(attributes.frame)")
-        }
-
-        return attributes
+        return currentSectionAttributes[indexPath.section]
     }
 
     override func finalLayoutAttributesForDisappearingSupplementaryElementOfKind(
@@ -208,25 +188,12 @@ class ExpandCollapseLayout: UICollectionViewLayout {
         atIndexPath elementIndexPath: NSIndexPath)
         -> UICollectionViewLayoutAttributes?
     {
-        let attributes = layoutAttributesForSupplementaryViewOfKind(elementKind, atIndexPath: elementIndexPath)
-
-        if elementIndexPath.section == 3 {
-            print("final: \(elementIndexPath.section) \(attributes!.frame)")
-        }
-
-        return attributes
+        return layoutAttributesForSupplementaryViewOfKind(elementKind, atIndexPath: elementIndexPath)
     }
 
     // MARK: - Invalidation
 
-    override func invalidateLayout() {
-        print("========= BEFORE INVALIDATE LAYOUT ===========")
-        super.invalidateLayout()
-        print("========= AFTER INVALIDATE LAYOUT ===========")
-    }
-
     override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
-        print("\n=============== SHOULD INVALIDATE LAYOUT =====================\n")
         return true
     }
 
@@ -236,17 +203,9 @@ class ExpandCollapseLayout: UICollectionViewLayout {
 
     override func invalidationContextForBoundsChange(newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
         let invalidationContext = super.invalidationContextForBoundsChange(newBounds) as! InvalidationContext
-        print("Super initialized a new invalidation context: \(invalidationContext.hashValue): \(newBounds)")
 
-        guard let oldBounds = collectionView?.bounds else {
-            print("Returning from condition 1")
-            return invalidationContext
-        }
-
-        guard oldBounds != newBounds else {
-            print("Returning from condition 2")
-            return invalidationContext
-        }
+        guard let oldBounds = collectionView?.bounds else { return invalidationContext }
+        guard oldBounds != newBounds else { return invalidationContext }
 
         let originChanged = !CGPointEqualToPoint(oldBounds.origin, newBounds.origin)
         let sizeChanged = !CGSizeEqualToSize(oldBounds.size, newBounds.size)
@@ -265,20 +224,11 @@ class ExpandCollapseLayout: UICollectionViewLayout {
     }
 
     override func invalidateLayoutWithContext(context: UICollectionViewLayoutInvalidationContext) {
-        print("Invalidating layout with context: \(context.hashValue)")
-
         let invalidationContext = context as! InvalidationContext
 
-        // TODO: Not sure why we would get into this case automatically...I think you'd actually have to call
-        // the `invalidationContextForBoundsChange` with the same bounds to trip this condition. Shouldn't happen
-        // automatically from what I can tell. Probably still a good idea to keep the check though.
-        guard invalidationContext.invalidateEverything || invalidationContext.invalidateSectionHeaders else {
-            print("No need for invalidation.....just no-op'ing")
-            return
-        }
+        guard invalidationContext.invalidateEverything || invalidationContext.invalidateSectionHeaders else { return }
 
         guard !invalidationContext.invalidateEverything else {
-            print("Invalidating EVERYTHING!!!")
             super.invalidateLayoutWithContext(invalidationContext)
             return
         }
@@ -298,20 +248,7 @@ class ExpandCollapseLayout: UICollectionViewLayout {
             atIndexPaths: sectionHeaderIndexPaths
         )
 
-        print("Invalidated supplementary elements!")
         super.invalidateLayoutWithContext(invalidationContext)
-    }
-
-    // MARK: - Animations
-
-    override func prepareForAnimatedBoundsChange(oldBounds: CGRect) {
-        super.prepareForAnimatedBoundsChange(oldBounds)
-        print("prepareForAnimatedBoundsChange: \(oldBounds)")
-    }
-
-    override func finalizeAnimatedBoundsChange() {
-        super.finalizeAnimatedBoundsChange()
-        print("finalizeAnimatedBoundsChange")
     }
 
     // MARK: - Collection View Info
@@ -321,10 +258,7 @@ class ExpandCollapseLayout: UICollectionViewLayout {
     }
 
     override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint) -> CGPoint {
-        guard let selectedCellIndexPath = selectedCellIndexPath else {
-            print("Returning proposed content offset: \(proposedContentOffset)")
-            return proposedContentOffset
-        }
+        guard let selectedCellIndexPath = selectedCellIndexPath else { return proposedContentOffset }
 
         var finalContentOffset = proposedContentOffset
 
@@ -340,11 +274,9 @@ class ExpandCollapseLayout: UICollectionViewLayout {
             if cellBottom > collectionViewBottom {
                 finalContentOffset = CGPointMake(0.0, collectionViewTop + (cellBottom - collectionViewBottom))
             } else if cellTop < collectionViewTop {
-                finalContentOffset = CGPointMake(0.0, collectionViewTop - (collectionViewTop - cellTop) - sectionHeight)
+                finalContentOffset = CGPointMake(0.0, collectionViewTop - (collectionViewTop - cellTop) - sectionHeaderHeight)
             }
         }
-
-        print("Returning custom offset: \(finalContentOffset)")
 
         return finalContentOffset
     }

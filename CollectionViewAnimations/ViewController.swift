@@ -13,35 +13,28 @@ class ViewController: UIViewController {
 
     // MARK: Properties
 
-    let colors2: [[UIColor]]
-    let colors: [UIColor]
+    let colors: [[UIColor]]
     var collectionView: UICollectionView!
     var layout = ExpandCollapseLayout()
 
     // MARK: Initialization
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        var colors: [UIColor] = []
+        self.colors = {
+            var colorsBySection: [[UIColor]] = []
 
-        for _ in 1...20 {
-            colors.append(UIColor.randomColor())
-        }
+            for _ in 0...Number.random(from: 2, to: 4) {
+                var colors: [UIColor] = []
 
-        self.colors = colors
-
-        var colors2: [[UIColor]] = []
-
-        for _ in 0...3 {
-            var colors: [UIColor] = []
-
-            for _ in 1...10 {
-                colors.append(UIColor.randomColor())
+                for _ in 0...Number.random(from: 2, to: 10) {
+                    colors.append(UIColor.randomColor())
+                }
+                
+                colorsBySection.append(colors)
             }
 
-            colors2.append(colors)
-        }
-
-        self.colors2 = colors2
+            return colorsBySection
+        }()
 
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -94,11 +87,11 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return colors2.count
+        return colors.count
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors2[section].count
+        return colors[section].count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -108,7 +101,7 @@ extension ViewController: UICollectionViewDataSource {
         ) as! ContentCell
 
         UIView.performWithoutAnimation {
-            cell.backgroundColor = self.colors[indexPath.item]
+            cell.backgroundColor = self.colors[indexPath.section][indexPath.item]
             cell.label.text = "Cell (\(indexPath.section), \(indexPath.item))"
         }
 
@@ -138,8 +131,6 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         layout.selectedCellIndexPath = layout.selectedCellIndexPath == indexPath ? nil : indexPath
 
-        print("\n============ Selected cell: (\(indexPath.section), \(indexPath.item)) ============\n")
-
         let bounceEnabled = false
 
         UIView.animateWithDuration(
@@ -149,16 +140,10 @@ extension ViewController: UICollectionViewDelegate {
             initialSpringVelocity: bounceEnabled ? 2.0 : 0.0,
             options: UIViewAnimationOptions(),
             animations: {
-                print("will invalidate layout")
                 self.layout.invalidateLayout()
-                print("did invalidate layout")
-                print("will layout if needed")
                 self.collectionView.layoutIfNeeded()
-                print("did layout if needed")
             },
-            completion: { _ in
-                print("animation complete")
-            }
+            completion: nil
         )
     }
 }
