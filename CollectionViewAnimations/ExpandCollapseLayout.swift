@@ -273,7 +273,7 @@ class ExpandCollapseLayout: UICollectionViewLayout {
 
             if cellBottom > collectionViewBottom {
                 finalContentOffset = CGPointMake(0.0, collectionViewTop + (cellBottom - collectionViewBottom))
-            } else if cellTop < collectionViewTop {
+            } else if cellTop < collectionViewTop + sectionHeaderHeight {
                 finalContentOffset = CGPointMake(0.0, collectionViewTop - (collectionViewTop - cellTop) - sectionHeaderHeight)
             }
         }
