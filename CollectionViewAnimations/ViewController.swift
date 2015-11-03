@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     // MARK: Properties
 
+    let colors2: [[UIColor]]
     let colors: [UIColor]
     var collectionView: UICollectionView!
     var layout = ExpandCollapseLayout()
@@ -27,6 +28,20 @@ class ViewController: UIViewController {
         }
 
         self.colors = colors
+
+        var colors2: [[UIColor]] = []
+
+        for _ in 0...3 {
+            var colors: [UIColor] = []
+
+            for _ in 1...10 {
+                colors.append(UIColor.randomColor())
+            }
+
+            colors2.append(colors)
+        }
+
+        self.colors2 = colors2
 
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -47,7 +62,13 @@ class ViewController: UIViewController {
             collectionView.dataSource = self
             collectionView.delegate = self
 
-            collectionView.registerClass(Cell.self, forCellWithReuseIdentifier: Cell.kind)
+            collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: ContentCell.reuseIdentifier)
+
+            collectionView.registerClass(
+                SectionHeaderCell.self,
+                forSupplementaryViewOfKind: SectionHeaderCell.kind,
+                withReuseIdentifier: SectionHeaderCell.reuseIdentifier
+            )
 
             return collectionView
         }()
@@ -63,18 +84,47 @@ class ViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 
 extension ViewController: UICollectionViewDataSource {
+    func collectionView(
+        collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        referenceSizeForHeaderInSection section: Int)
+        -> CGSize
+    {
+        return CGSize(width: collectionView.bounds.width, height: 40.0)
+    }
+
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return colors2.count
+    }
+
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors.count
+        return colors2[section].count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            Cell.kind,
+            ContentCell.reuseIdentifier,
             forIndexPath: indexPath
-        ) as! Cell
+        ) as! ContentCell
 
         cell.backgroundColor = colors[indexPath.item]
-        cell.label.text = "Cell \(indexPath.item)"
+        cell.label.text = "Cell (\(indexPath.section), \(indexPath.item))"
+
+        return cell
+    }
+
+    func collectionView(
+        collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
+    {
+        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(
+            SectionHeaderCell.kind,
+            withReuseIdentifier: SectionHeaderCell.reuseIdentifier,
+            forIndexPath: indexPath
+        ) as! SectionHeaderCell
+
+        cell.label.text = "Section \(indexPath.section)"
 
         return cell
     }
@@ -86,6 +136,8 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         layout.selectedCellIndexPath = layout.selectedCellIndexPath == indexPath ? nil : indexPath
 
+        print("\n============ Selected cell: (\(indexPath.section), \(indexPath.item)) ============\n")
+
         let bounceEnabled = false
 
         UIView.animateWithDuration(
@@ -95,10 +147,16 @@ extension ViewController: UICollectionViewDelegate {
             initialSpringVelocity: bounceEnabled ? 2.0 : 0.0,
             options: UIViewAnimationOptions(),
             animations: {
+                print("will invalidate layout")
                 self.layout.invalidateLayout()
+                print("did invalidate layout")
+                print("will layout if needed")
                 self.collectionView.layoutIfNeeded()
+                print("did layout if needed")
             },
-            completion: nil
+            completion: { _ in
+                print("animation complete")
+            }
         )
     }
 }

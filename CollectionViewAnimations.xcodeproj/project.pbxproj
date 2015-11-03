@@ -14,6 +14,7 @@
 		4C79D3481BE3145000E4EB66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79D3471BE3145000E4EB66 /* ViewController.swift */; };
 		4C79D34D1BE3145000E4EB66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C79D34C1BE3145000E4EB66 /* Assets.xcassets */; };
 		4C79D3501BE3145000E4EB66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C79D34E1BE3145000E4EB66 /* LaunchScreen.storyboard */; };
+		4CB8EE1A1BE84915009C4D07 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB8EE191BE84915009C4D07 /* Number.swift */; };
 		BBC04876C5B83E5EE2832BE9 /* Pods_CollectionViewAnimations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E192F540D7BAA2A1A98D52ED /* Pods_CollectionViewAnimations.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		4C79D34C1BE3145000E4EB66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C79D34F1BE3145000E4EB66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C79D3511BE3145000E4EB66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CB8EE191BE84915009C4D07 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		B5E10D3E0971160F507076FE /* Pods-CollectionViewAnimations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionViewAnimations.release.xcconfig"; path = "Pods/Target Support Files/Pods-CollectionViewAnimations/Pods-CollectionViewAnimations.release.xcconfig"; sourceTree = "<group>"; };
 		BEBBAB831768EB03C14B4D03 /* Pods-CollectionViewAnimations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionViewAnimations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CollectionViewAnimations/Pods-CollectionViewAnimations.debug.xcconfig"; sourceTree = "<group>"; };
 		E192F540D7BAA2A1A98D52ED /* Pods_CollectionViewAnimations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectionViewAnimations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				4C79D3451BE3145000E4EB66 /* AppDelegate.swift */,
 				4C2B85FB1BE316860050678C /* ExpandCollapseLayout.swift */,
 				4C2B85FD1BE3176E0050678C /* Cell.swift */,
+				4CB8EE191BE84915009C4D07 /* Number.swift */,
 				4C2B85FF1BE317A90050678C /* UIColor+CVA.swift */,
 				4C79D3471BE3145000E4EB66 /* ViewController.swift */,
 				4C79D3571BE3148300E4EB66 /* Supporting Files */,
@@ -225,6 +228,7 @@
 			files = (
 				4C79D3481BE3145000E4EB66 /* ViewController.swift in Sources */,
 				4C2B85FE1BE3176E0050678C /* Cell.swift in Sources */,
+				4CB8EE1A1BE84915009C4D07 /* Number.swift in Sources */,
 				4C2B86001BE317A90050678C /* UIColor+CVA.swift in Sources */,
 				4C2B85FC1BE316860050678C /* ExpandCollapseLayout.swift in Sources */,
 				4C79D3461BE3145000E4EB66 /* AppDelegate.swift in Sources */,
