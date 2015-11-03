@@ -107,8 +107,10 @@ extension ViewController: UICollectionViewDataSource {
             forIndexPath: indexPath
         ) as! ContentCell
 
-        cell.backgroundColor = colors[indexPath.item]
-        cell.label.text = "Cell (\(indexPath.section), \(indexPath.item))"
+        UIView.performWithoutAnimation {
+            cell.backgroundColor = self.colors[indexPath.item]
+            cell.label.text = "Cell (\(indexPath.section), \(indexPath.item))"
+        }
 
         return cell
     }

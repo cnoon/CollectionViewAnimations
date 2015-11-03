@@ -14,6 +14,8 @@ class ContentCell: UICollectionViewCell {
 
     var label: UILabel!
 
+    // MARK: Initialization
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -36,6 +38,14 @@ class ContentCell: UICollectionViewCell {
         fatalError()
     }
 
+    override func prepareForReuse() {
+        UIView.performWithoutAnimation {
+            self.backgroundColor = nil
+        }
+    }
+
+    // MARK: Layout
+
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
         layoutIfNeeded()
@@ -49,6 +59,8 @@ class SectionHeaderCell: UICollectionReusableView {
     class var kind: String { return "SectionHeaderCell" }
 
     var label: UILabel!
+
+    // MARK: Initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,6 +87,8 @@ class SectionHeaderCell: UICollectionReusableView {
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
+
+    // MARK: Layout
 
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
