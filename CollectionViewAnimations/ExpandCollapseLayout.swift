@@ -28,11 +28,8 @@ class ExpandCollapseLayout: UICollectionViewLayout {
         contentSize = CGSizeZero
         currentAttributes = []
 
-        if let
-            collectionView = collectionView,
-            dataSource = collectionView.dataSource
-        {
-            let itemCount = dataSource.collectionView(collectionView, numberOfItemsInSection: 0)
+        if let collectionView = collectionView {
+            let itemCount = collectionView.numberOfItemsInSection(0)
             let width = collectionView.bounds.size.width
             var y: CGFloat = 0
 
