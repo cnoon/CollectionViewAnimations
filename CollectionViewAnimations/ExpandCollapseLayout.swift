@@ -37,96 +37,108 @@ class ExpandCollapseLayout: UICollectionViewLayout {
 
         print("-------------- PREPARE LAYOUT ---------------")
 
-        previousAttributes = currentAttributes
-        previousSectionAttributes = currentSectionAttributes
-
-        contentSize = CGSizeZero
-        currentAttributes = []
-        currentSectionAttributes = []
-        currentSectionLimits = []
-
-        //============ COMPUTE CONTENT CELL ATTRIBUTES ===========
-
-        if let collectionView = collectionView {
-            let width = collectionView.bounds.size.width
-            var y: CGFloat = 0
-
-            for sectionIndex in 0..<collectionView.numberOfSections() {
-                let itemCount = collectionView.numberOfItemsInSection(sectionIndex)
-                let sectionTop = y
-
-                // Add section header cell
-
-                let indexPath = NSIndexPath(forItem: 0, inSection: sectionIndex)
-                let attributes = UICollectionViewLayoutAttributes(
-                    forSupplementaryViewOfKind: SectionHeaderCell.kind,
-                    withIndexPath: indexPath
-                )
-
-                attributes.zIndex = 1
-                attributes.frame = CGRectMake(0, y, width, sectionHeight)
-
-                currentSectionAttributes.append(attributes)
-
-                y += sectionHeight
-
-                // Add content cells
-
-                var attributesList: [UICollectionViewLayoutAttributes] = []
-
-                for itemIndex in 0..<itemCount {
-                    let indexPath = NSIndexPath(forItem: itemIndex, inSection: sectionIndex)
-                    let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-                    let size = CGSize(
-                        width: width,
-                        height: indexPath == selectedCellIndexPath ? 300.0 : 100.0
-                    )
-
-                    attributes.frame = CGRectMake(0, y, width, size.height)
-
-                    attributesList.append(attributes)
-
-                    y += size.height
-                }
-
-                let sectionBottom = y
-                currentSectionLimits.append(SectionLimit(top: sectionTop, bottom: sectionBottom))
-
-                currentAttributes.append(attributesList)
-            }
-
-            contentSize = CGSizeMake(width, y)
-
-            //============ COMPUTE STICKY HEADER ATTRIBUTES ===========
-
-            let collectionViewTop = collectionView.contentOffset.y // Stuck
-            let aboveCollectionViewTop = collectionViewTop - sectionHeight
-
-            for sectionIndex in 0..<collectionView.numberOfSections() {
-                let sectionLimit = currentSectionLimits[sectionIndex]
-                let sectionAttributes = currentSectionAttributes[sectionIndex]
-
-                let sectionTop = sectionLimit.top
-                let sectionBottom = sectionLimit.bottom - sectionHeight
-
-                sectionAttributes.frame.origin.y = min(
-                    max(sectionTop, collectionViewTop),
-                    max(sectionBottom, aboveCollectionViewTop)
-                )
-
-                if sectionIndex == collectionView.numberOfSections() - 1 {
-                    print("Last Section Attributes: \(sectionAttributes.frame)")
-                }
-            }
-        }
+        prepareContentCellAttributes()
+        prepareSectionHeaderAttributes()
     }
 
     private func prepareContentCellAttributes() {
-        // TODO: implement me!
+        guard let collectionView = collectionView else { return }
+
+        print("prepareContentCellAttributes")
+
+        // RESET
+
+        previousAttributes = currentAttributes
+
+        contentSize = CGSizeZero
+        currentAttributes = []
+        currentSectionLimits = []
+
+        // CALCULATE NEW VALUES
+
+        let width = collectionView.bounds.size.width
+        var y: CGFloat = 0
+
+        for sectionIndex in 0..<collectionView.numberOfSections() {
+            let itemCount = collectionView.numberOfItemsInSection(sectionIndex)
+            let sectionTop = y
+
+            y += sectionHeight
+
+            var attributesList: [UICollectionViewLayoutAttributes] = []
+
+            for itemIndex in 0..<itemCount {
+                let indexPath = NSIndexPath(forItem: itemIndex, inSection: sectionIndex)
+                let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+                let size = CGSize(
+                    width: width,
+                    height: indexPath == selectedCellIndexPath ? 300.0 : 100.0
+                )
+
+                attributes.frame = CGRectMake(0, y, width, size.height)
+
+                attributesList.append(attributes)
+
+                y += size.height
+            }
+
+            let sectionBottom = y
+            currentSectionLimits.append(SectionLimit(top: sectionTop, bottom: sectionBottom))
+
+            currentAttributes.append(attributesList)
+        }
+
+        contentSize = CGSizeMake(width, y)
     }
 
     private func prepareSectionHeaderAttributes() {
-        // TODO: implement me!
+        guard let collectionView = collectionView else { return }
+
+        print("prepareSectionHeaderAttributes")
+
+        // RESET
+
+        previousSectionAttributes = currentSectionAttributes
+        currentSectionAttributes = []
+
+        // CALCULATE NEW VALUES
+
+        let width = collectionView.bounds.size.width
+
+        let collectionViewTop = collectionView.contentOffset.y // Stuck
+        let aboveCollectionViewTop = collectionViewTop - sectionHeight
+
+        for sectionIndex in 0..<collectionView.numberOfSections() {
+            let sectionLimit = currentSectionLimits[sectionIndex]
+
+            // ADD SECTION HEADER ATTRIBUTES
+
+            let indexPath = NSIndexPath(forItem: 0, inSection: sectionIndex)
+
+            let attributes = UICollectionViewLayoutAttributes(
+                forSupplementaryViewOfKind: SectionHeaderCell.kind,
+                withIndexPath: indexPath
+            )
+
+            attributes.zIndex = 1
+            attributes.frame = CGRectMake(0, sectionLimit.top, width, sectionHeight)
+
+            // SET THE Y-POSITION
+
+            let sectionTop = sectionLimit.top
+            let sectionBottom = sectionLimit.bottom - sectionHeight
+
+            attributes.frame.origin.y = min(
+                max(sectionTop, collectionViewTop),
+                max(sectionBottom, aboveCollectionViewTop)
+            )
+
+            if sectionIndex == collectionView.numberOfSections() - 1 {
+                print("Last Section Attributes: \(attributes.frame)")
+            }
+
+            currentSectionAttributes.append(attributes)
+        }
     }
 
     // MARK: - Layout Attributes - Content Cell
@@ -272,6 +284,8 @@ class ExpandCollapseLayout: UICollectionViewLayout {
         }
 
         //============== Recompute Section Headers =================
+
+        prepareSectionHeaderAttributes()
 
         var sectionHeaderIndexPaths: [NSIndexPath] = []
 
