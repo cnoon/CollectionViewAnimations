@@ -121,6 +121,14 @@ class ExpandCollapseLayout: UICollectionViewLayout {
         }
     }
 
+    private func prepareContentCellAttributes() {
+        // TODO: implement me!
+    }
+
+    private func prepareSectionHeaderAttributes() {
+        // TODO: implement me!
+    }
+
     // MARK: - Layout Attributes - Content Cell
 
     override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
@@ -199,14 +207,85 @@ class ExpandCollapseLayout: UICollectionViewLayout {
 
     // MARK: - Invalidation
 
-    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
-//        if let oldBounds = collectionView?.bounds where !CGSizeEqualToSize(oldBounds.size, newBounds.size) {
-//            return true
-//        }
-//
-//        return false
+    override func invalidateLayout() {
+        print("========= BEFORE INVALIDATE LAYOUT ===========")
+        super.invalidateLayout()
+        print("========= AFTER INVALIDATE LAYOUT ===========")
+    }
 
+    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+        print("\n=============== SHOULD INVALIDATE LAYOUT =====================\n")
         return true
+    }
+
+    override class func invalidationContextClass() -> AnyClass {
+        return InvalidationContext.self
+    }
+
+    override func invalidationContextForBoundsChange(newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
+        let invalidationContext = super.invalidationContextForBoundsChange(newBounds) as! InvalidationContext
+        print("Super initialized a new invalidation context: \(invalidationContext.hashValue): \(newBounds)")
+
+        guard let oldBounds = collectionView?.bounds else {
+            print("Returning from condition 1")
+            return invalidationContext
+        }
+
+        guard oldBounds != newBounds else {
+            print("Returning from condition 2")
+            return invalidationContext
+        }
+
+        let originChanged = !CGPointEqualToPoint(oldBounds.origin, newBounds.origin)
+        let sizeChanged = !CGSizeEqualToSize(oldBounds.size, newBounds.size)
+
+        if sizeChanged {
+            invalidationContext.shouldInvalidateEverything = true
+        } else {
+            invalidationContext.shouldInvalidateEverything = false
+        }
+
+        if originChanged {
+            invalidationContext.invalidateSectionHeaders = true
+        }
+
+        return invalidationContext
+    }
+
+    override func invalidateLayoutWithContext(context: UICollectionViewLayoutInvalidationContext) {
+        print("Invalidating layout with context: \(context.hashValue)")
+
+        let invalidationContext = context as! InvalidationContext
+
+        // TODO: Not sure why we would get into this case automatically...I think you'd actually have to call
+        // the `invalidationContextForBoundsChange` with the same bounds to trip this condition. Shouldn't happen
+        // automatically from what I can tell. Probably still a good idea to keep the check though.
+        guard invalidationContext.invalidateEverything || invalidationContext.invalidateSectionHeaders else {
+            print("No need for invalidation.....just no-op'ing")
+            return
+        }
+
+        guard !invalidationContext.invalidateEverything else {
+            print("Invalidating EVERYTHING!!!")
+            super.invalidateLayoutWithContext(invalidationContext)
+            return
+        }
+
+        //============== Recompute Section Headers =================
+
+        var sectionHeaderIndexPaths: [NSIndexPath] = []
+
+        for sectionIndex in 0..<currentSectionAttributes.count {
+            sectionHeaderIndexPaths.append(NSIndexPath(forItem: 0, inSection: sectionIndex))
+        }
+
+        invalidationContext.invalidateSupplementaryElementsOfKind(
+            SectionHeaderCell.kind,
+            atIndexPaths: sectionHeaderIndexPaths
+        )
+
+        print("Invalidated supplementary elements!")
+        super.invalidateLayoutWithContext(invalidationContext)
     }
 
     // MARK: - Animations
