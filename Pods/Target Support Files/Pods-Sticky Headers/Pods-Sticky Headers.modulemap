@@ -1,0 +1,6 @@
+framework module Pods_Sticky_Headers {
+  umbrella header "Pods-Sticky Headers-umbrella.h"
+
+  export *
+  module * { export * }
+}

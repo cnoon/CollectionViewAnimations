@@ -1,0 +1,6 @@
+framework module Pods_Cell_Animations {
+  umbrella header "Pods-Cell Animations-umbrella.h"
+
+  export *
+  module * { export * }
+}
