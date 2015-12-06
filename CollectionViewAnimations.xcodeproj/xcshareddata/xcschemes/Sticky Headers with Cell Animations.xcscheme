@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4CAAD8E41C13BC09004ADF5C"
-            BuildableName = "Cell Animations.app"
-            BlueprintName = "Cell Animations"
+            BlueprintIdentifier = "4C79D3411BE3145000E4EB66"
+            BuildableName = "Sticky Headers With Cell Animations.app"
+            BlueprintName = "Sticky Headers with Cell Animations"
             ReferencedContainer = "container:CollectionViewAnimations.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4CAAD8E41C13BC09004ADF5C"
-            BuildableName = "Cell Animations.app"
-            BlueprintName = "Cell Animations"
+            BlueprintIdentifier = "4C79D3411BE3145000E4EB66"
+            BuildableName = "Sticky Headers With Cell Animations.app"
+            BlueprintName = "Sticky Headers with Cell Animations"
             ReferencedContainer = "container:CollectionViewAnimations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

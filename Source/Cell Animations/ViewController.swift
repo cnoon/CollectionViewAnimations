@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Sticky Headers with Cell Animations
+//  CollectionViewAnimations
 //
 //  Created by Christian Noon on 10/29/15.
 //  Copyright © 2015 Noondev. All rights reserved.
@@ -13,28 +13,20 @@ class ViewController: UIViewController {
 
     // MARK: Properties
 
-    let colors: [[UIColor]]
+    let colors: [UIColor]
     var collectionView: UICollectionView!
     var layout = Layout()
 
     // MARK: Initialization
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        self.colors = {
-            var colorsBySection: [[UIColor]] = []
+        var colors: [UIColor] = []
 
-            for _ in 0...Number.random(from: 2, to: 4) {
-                var colors: [UIColor] = []
+        for _ in 1...20 {
+            colors.append(UIColor.randomColor())
+        }
 
-                for _ in 0...Number.random(from: 2, to: 10) {
-                    colors.append(UIColor.randomColor())
-                }
-                
-                colorsBySection.append(colors)
-            }
-
-            return colorsBySection
-        }()
+        self.colors = colors
 
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -55,13 +47,7 @@ class ViewController: UIViewController {
             collectionView.dataSource = self
             collectionView.delegate = self
 
-            collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: ContentCell.reuseIdentifier)
-
-            collectionView.registerClass(
-                SectionHeaderCell.self,
-                forSupplementaryViewOfKind: SectionHeaderCell.kind,
-                withReuseIdentifier: SectionHeaderCell.reuseIdentifier
-            )
+            collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: ContentCell.kind)
 
             return collectionView
         }()
@@ -77,49 +63,18 @@ class ViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 
 extension ViewController: UICollectionViewDataSource {
-    func collectionView(
-        collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        referenceSizeForHeaderInSection section: Int)
-        -> CGSize
-    {
-        return CGSize(width: collectionView.bounds.width, height: 40.0)
-    }
-
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return colors.count
-    }
-
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors[section].count
+        return colors.count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            ContentCell.reuseIdentifier,
+            ContentCell.kind,
             forIndexPath: indexPath
         ) as! ContentCell
 
-        UIView.performWithoutAnimation {
-            cell.backgroundColor = self.colors[indexPath.section][indexPath.item]
-            cell.label.text = "Cell (\(indexPath.section), \(indexPath.item))"
-        }
-
-        return cell
-    }
-
-    func collectionView(
-        collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
-    {
-        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(
-            SectionHeaderCell.kind,
-            withReuseIdentifier: SectionHeaderCell.reuseIdentifier,
-            forIndexPath: indexPath
-        ) as! SectionHeaderCell
-
-        cell.label.text = "Section \(indexPath.section)"
+        cell.backgroundColor = colors[indexPath.item]
+        cell.label.text = "Cell \(indexPath.item)"
 
         return cell
     }

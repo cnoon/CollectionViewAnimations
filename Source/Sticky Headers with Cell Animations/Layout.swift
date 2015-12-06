@@ -1,6 +1,6 @@
 //
 //  ExpandCollapseLayout.swift
-//  CollectionViewAnimations
+//  Sticky Headers with Cell Animations
 //
 //  Created by Christian Noon on 10/29/15.
 //  Copyright © 2015 Noondev. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpandCollapseLayout: UICollectionViewLayout {
+class Layout: UICollectionViewLayout {
 
     // MARK: - Helper Types
 
