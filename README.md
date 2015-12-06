@@ -197,7 +197,7 @@ The goal of the second application (Sticky Headers) was to use a custom layout t
 
 Now that both content cells and section header cells need to be displayed in the collection view, the layout attributes need to be computed for both. In this example, content cells will be represented using regular cells while section headers will be displayed using supplementary views.
 
-> For more details on each cell type, please refer to the [Cell.swift](https://github.com/cnoon/CollectionViewAnimations/blob/master/CollectionViewAnimations/Cell.swift) implementation and the [UICollectionView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/) documentation.
+> For more details on each cell type, please refer to the [Cell.swift](https://github.com/cnoon/CollectionViewAnimations/blob/master/Source/Common/Cell.swift) implementation and the [UICollectionView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/) documentation.
 
 ```swift
 override func prepareLayout() {
