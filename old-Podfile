@@ -1,4 +1,0 @@
-platform :ios, '8.4'
-use_frameworks!
-
-pod 'SnapKit', '~> 0.18'

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  CollectionViewAnimations
+//  Cell Animations
 //
 //  Created by Christian Noon on 10/29/15.
 //  Copyright © 2015 Noondev. All rights reserved.
@@ -57,6 +57,12 @@ class ViewController: UIViewController {
         collectionView.snp_makeConstraints { make in
             make.edges.equalTo(view)
         }
+    }
+
+    // MARK: Status Bar
+
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }
 

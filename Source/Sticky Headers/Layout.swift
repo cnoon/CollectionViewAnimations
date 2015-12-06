@@ -1,6 +1,6 @@
 //
 //  ExpandCollapseLayout.swift
-//  Sticky Headers with Cell Animations
+//  Sticky Headers
 //
 //  Created by Christian Noon on 10/29/15.
 //  Copyright © 2015 Noondev. All rights reserved.
@@ -44,7 +44,7 @@ class Layout: UICollectionViewLayout {
     private func prepareContentCellAttributes() {
         guard let collectionView = collectionView else { return }
 
-        // RESET
+        //================== Reset Content Cell Attributes ================
 
         previousAttributes = currentAttributes
 
@@ -52,7 +52,7 @@ class Layout: UICollectionViewLayout {
         currentAttributes = []
         currentSectionLimits = []
 
-        // CALCULATE NEW VALUES
+        //================== Calculate New Content Cell Attributes ==================
 
         let width = collectionView.bounds.size.width
         var y: CGFloat = 0
@@ -92,22 +92,22 @@ class Layout: UICollectionViewLayout {
     private func prepareSectionHeaderAttributes() {
         guard let collectionView = collectionView else { return }
 
-        // RESET
+        //================== Reset Section Attributes ====================
 
         previousSectionAttributes = currentSectionAttributes
         currentSectionAttributes = []
 
-        // CALCULATE NEW VALUES
+        //==================== Calculate New Section Attributes ===================
 
         let width = collectionView.bounds.size.width
 
-        let collectionViewTop = collectionView.contentOffset.y // Stuck
+        let collectionViewTop = collectionView.contentOffset.y
         let aboveCollectionViewTop = collectionViewTop - sectionHeaderHeight
 
         for sectionIndex in 0..<collectionView.numberOfSections() {
             let sectionLimit = currentSectionLimits[sectionIndex]
 
-            // ADD SECTION HEADER ATTRIBUTES
+            //================= Add Section Header Attributes =================
 
             let indexPath = NSIndexPath(forItem: 0, inSection: sectionIndex)
 
@@ -119,7 +119,7 @@ class Layout: UICollectionViewLayout {
             attributes.zIndex = 1
             attributes.frame = CGRectMake(0, sectionLimit.top, width, sectionHeaderHeight)
 
-            // SET THE Y-POSITION
+            //================== Set the y-position ==================
 
             let sectionTop = sectionLimit.top
             let sectionBottom = sectionLimit.bottom - sectionHeaderHeight

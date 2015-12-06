@@ -10,18 +10,16 @@
 		013EFBFD13E222069773CF4C4BC13698 /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A877C5C14A8B495ECAB69BE839FFA44 /* ViewController+SnapKit.swift */; };
 		06AEDD15714762760C1832574BBEDB1E /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1CFBED61FB63BBC905CD3AFEE402C /* SnapKit.swift */; };
 		10684BDBCBB3FD9F308E9DF85EE71F8C /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061A45F7542E986BCB23EBBD8AD4A13 /* ConstraintDescription.swift */; };
-		117B3CF0BBAE3138D2E0296082156088 /* Pods-Sticky Headers with Cell Animations-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E1C9749B7D58680EDA5B1CBB41618 /* Pods-Sticky Headers with Cell Animations-dummy.m */; };
 		11F2682E9E2B5C7EC677A752E7101546 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03EFFB295211A70F01FAD48D41DF5F3 /* ConstraintMaker.swift */; };
 		2FC5DA91B04F82DD7F457B26C699BFE7 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C496DA4CA3F61B29BB063F74876C70 /* EdgeInsets.swift */; };
 		31E77A5F8C78E56E8531C3217F5E08D2 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E5EE3CDB090004C84E658BC83AEB7 /* SnapKit-dummy.m */; };
-		41839D0694ED6EE28C49EC256D13347A /* Pods-Sticky Headers-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB75BAE02BCE5F5091FF237D8013B440 /* Pods-Sticky Headers-dummy.m */; };
-		44FF3AB636CBD3994EB09549CEDA283B /* Pods-Sticky Headers-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40529771874C5B468BA94048FF6F4D37 /* Pods-Sticky Headers-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A84AEFBE517B764742D0AA5E4920053 /* Pods-Cell Animations-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 552F6E12199C9145B5CF9BD1DA9D7295 /* Pods-Cell Animations-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41839D0694ED6EE28C49EC256D13347A /* Pods-Sticky Headers-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105D113150FAC023E692EC238BEDD43 /* Pods-Sticky Headers-dummy.m */; };
+		44FF3AB636CBD3994EB09549CEDA283B /* Pods-Sticky Headers-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1D7E5A6018A0D4362C24B17E8F26EA6 /* Pods-Sticky Headers-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A84AEFBE517B764742D0AA5E4920053 /* Pods-Cell Animations-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AB8EAF26380821649EF5F3CEFA208C /* Pods-Cell Animations-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62A578829F3330D14B8C0862719A21EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		72FA6EC69D92F7ABA97FD9D032C15A25 /* Pods-Cell Animations-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F490012BED3C1257398926C9F31DCEAB /* Pods-Cell Animations-dummy.m */; };
+		72FA6EC69D92F7ABA97FD9D032C15A25 /* Pods-Cell Animations-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D0558BBF5FB3D94EF0F878E46FC9B /* Pods-Cell Animations-dummy.m */; };
 		8043839B960C1B388F41F3938F6F5A3B /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D45FAC3D162C8D3F9CFE592F79E42 /* Debugging.swift */; };
 		A1F0BAECB78CC991F88E3051763AC3E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		AE7426492C32A0596D41EB5BA1C3FBE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		AF20BB82AEF43EE3FCF3B1BA8A836CA1 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD83C2BF9A16815558CBFACD79C938 /* ConstraintRelation.swift */; };
 		B9E9E1EC17B11985EFD875D5428BF4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		BA251D6B6005E179275606DA4749E490 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C745F502C842A223464EC61885F02BB /* Constraint.swift */; };
@@ -29,18 +27,10 @@
 		CD91F176D63FA7016E3483E9B61244E5 /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB547CA6D4862CCE70A4B51F1EABAE /* View+SnapKit.swift */; };
 		D1851EFF59DCBF8C8BA6AFC7B209E7CC /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B869919EAC3B1E5EF05B0107B595C13C /* LayoutConstraint.swift */; };
 		F3D4EB9701D51F549EE463E6518A4706 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED5648C0C88C2BBB8B1737D3C811DF /* ConstraintItem.swift */; };
-		F7C583BC82788313D4AFD117CF6DECF3 /* Pods-Sticky Headers with Cell Animations-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC91BD5EE8D33990CFEDF8B303B75F2C /* Pods-Sticky Headers with Cell Animations-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCEC2E06F21096B5BC80695E71AB5DBC /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17ED37A4D4337C9AC445D07BA9E09051 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8309EDDF447C01A1E671356CD6AA2FB1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5EA938C1D92CBA03AB298E5B1544E8EE;
-			remoteInfo = SnapKit;
-		};
 		99179CBCD8BBA71E6BD293F2BF9F1400 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -58,60 +48,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		001461809F7059631914D40FEDCC332C /* Pods-Cell Animations-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cell Animations-frameworks.sh"; sourceTree = "<group>"; };
-		04280954638898C1F8A388E3CF7926BF /* Pods-Cell Animations-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cell Animations-resources.sh"; sourceTree = "<group>"; };
 		079E5EE3CDB090004C84E658BC83AEB7 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
-		0B76C0A4D9F94A70B89995BEA94E72E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1241BFDAF3DCD5025A78267E9D12F3F6 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		14BBAC94B398B90371C94AACABB1CF8D /* Pods-Cell Animations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cell Animations.release.xcconfig"; sourceTree = "<group>"; };
+		17BA2403E487B3A04F274B25462DCF26 /* Pods-Sticky Headers-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sticky Headers-frameworks.sh"; sourceTree = "<group>"; };
 		17ED37A4D4337C9AC445D07BA9E09051 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
-		1934363EEB9D68B7ACA5D981BC1A7C79 /* Pods_Sticky_Headers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sticky_Headers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A877C5C14A8B495ECAB69BE839FFA44 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ViewController+SnapKit.swift"; path = "Source/ViewController+SnapKit.swift"; sourceTree = "<group>"; };
+		1BD74081F5B1B80E921CB417CACB4632 /* Pods-Cell Animations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cell Animations.release.xcconfig"; sourceTree = "<group>"; };
 		1EA1CFBED61FB63BBC905CD3AFEE402C /* SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapKit.swift; path = Source/SnapKit.swift; sourceTree = "<group>"; };
-		2A0B54426A06F028558BAC5939DAD0E8 /* Pods-Sticky Headers-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sticky Headers-frameworks.sh"; sourceTree = "<group>"; };
-		2A534D764ECC64395D92A336E7BCD2D2 /* Pods_Cell_Animations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cell_Animations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3061A45F7542E986BCB23EBBD8AD4A13 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
-		30CE96CC05DE50C20F44C891A67BB7B8 /* Pods-Sticky Headers-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sticky Headers-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3C48A40E37F3B33BB42E6F542363B2B7 /* Pods-Sticky Headers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sticky Headers.debug.xcconfig"; sourceTree = "<group>"; };
+		307DC1E2AFD92144D0AB963C7C3F92FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3105D113150FAC023E692EC238BEDD43 /* Pods-Sticky Headers-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sticky Headers-dummy.m"; sourceTree = "<group>"; };
+		31B7B4E9EE710C31AD0BACBEA618FADF /* Pods-Sticky Headers-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sticky Headers-acknowledgements.plist"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		40529771874C5B468BA94048FF6F4D37 /* Pods-Sticky Headers-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sticky Headers-umbrella.h"; sourceTree = "<group>"; };
 		415D45FAC3D162C8D3F9CFE592F79E42 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
-		43A9373C7469F832A70F331084AD831B /* Pods-Sticky Headers with Cell Animations-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sticky Headers with Cell Animations-acknowledgements.markdown"; sourceTree = "<group>"; };
 		495929FB6F57FC07CF2233838AD92579 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
-		4A84EF35E18D0DCAB27804ED2938FF1E /* Pods-Cell Animations.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Cell Animations.modulemap"; sourceTree = "<group>"; };
-		510D05719BA3FE5F7E5B283DD5FFE100 /* Pods-Sticky Headers with Cell Animations-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sticky Headers with Cell Animations-frameworks.sh"; sourceTree = "<group>"; };
-		552F6E12199C9145B5CF9BD1DA9D7295 /* Pods-Cell Animations-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cell Animations-umbrella.h"; sourceTree = "<group>"; };
 		55BB547CA6D4862CCE70A4B51F1EABAE /* View+SnapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+SnapKit.swift"; path = "Source/View+SnapKit.swift"; sourceTree = "<group>"; };
+		565F08530C520094DC149459439E4DFB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56B1FCA085C2AC4CDCEB52E3588F26EB /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		5E32082172EA3C3B4CF0F41AAC509EA6 /* Pods-Sticky Headers-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sticky Headers-resources.sh"; sourceTree = "<group>"; };
-		71DB3A582DF401F9FBBDE52544566D47 /* Pods-Cell Animations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cell Animations.debug.xcconfig"; sourceTree = "<group>"; };
-		7DE48CC5AE61DF35900C9E72181D7925 /* Pods-Sticky Headers with Cell Animations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sticky Headers with Cell Animations.release.xcconfig"; sourceTree = "<group>"; };
-		8B4F9EF93DDC0C7AF6236D90AFB58D83 /* Pods-Sticky Headers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sticky Headers.release.xcconfig"; sourceTree = "<group>"; };
-		8DD9EF6C3A8CED80B8122B095B78D38C /* Pods-Sticky Headers with Cell Animations.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Sticky Headers with Cell Animations.modulemap"; sourceTree = "<group>"; };
+		697C7C0755667B61CD51A3B03A57EDC3 /* Pods-Sticky Headers.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Sticky Headers.modulemap"; sourceTree = "<group>"; };
+		72AB8EAF26380821649EF5F3CEFA208C /* Pods-Cell Animations-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cell Animations-umbrella.h"; sourceTree = "<group>"; };
+		7B9D0558BBF5FB3D94EF0F878E46FC9B /* Pods-Cell Animations-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cell Animations-dummy.m"; sourceTree = "<group>"; };
+		847CEF24F42B812BB8E20863D0B8A421 /* Pods-Sticky Headers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sticky Headers.debug.xcconfig"; sourceTree = "<group>"; };
+		84963AA4E33E939FCFE975C431C8AA8E /* Pods-Sticky Headers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sticky Headers.release.xcconfig"; sourceTree = "<group>"; };
 		90D8599FCFCA98DB19D3DE0AD81D9CD6 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
 		92DD83C2BF9A16815558CBFACD79C938 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
+		962C23BFD30990C26C751F7EA2A5E2BB /* Pods-Sticky Headers-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sticky Headers-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9C745F502C842A223464EC61885F02BB /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		A03EFFB295211A70F01FAD48D41DF5F3 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
-		A0FBD381E2628DFB0195951A436D4349 /* Pods-Sticky Headers-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sticky Headers-acknowledgements.plist"; sourceTree = "<group>"; };
-		A100B4BB1CE2343E93C43570DC9F5F4E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6553DFF915634AB52E13F86431AF135 /* Pods-Sticky Headers.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Sticky Headers.modulemap"; sourceTree = "<group>"; };
 		A7C496DA4CA3F61B29BB063F74876C70 /* EdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EdgeInsets.swift; path = Source/EdgeInsets.swift; sourceTree = "<group>"; };
 		A804ABA92EC1DA52844E140917F08DF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B25E1C9749B7D58680EDA5B1CBB41618 /* Pods-Sticky Headers with Cell Animations-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sticky Headers with Cell Animations-dummy.m"; sourceTree = "<group>"; };
+		AEDE01F1D6A252B87609CFE4D1897A65 /* Pods-Cell Animations-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cell Animations-frameworks.sh"; sourceTree = "<group>"; };
+		B13BE43F0CD3E546630C2DE3E2178C8D /* Pods-Cell Animations.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Cell Animations.modulemap"; sourceTree = "<group>"; };
 		B869919EAC3B1E5EF05B0107B595C13C /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BB75BAE02BCE5F5091FF237D8013B440 /* Pods-Sticky Headers-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sticky Headers-dummy.m"; sourceTree = "<group>"; };
-		CF5BE1697EAA243F24A50F7566AF8DBE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3D19F00F56DD684B9156FD127E717A8 /* Pods-Cell Animations-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cell Animations-acknowledgements.plist"; sourceTree = "<group>"; };
-		D6C2946EB6F119AD02CF0BEAA0493DE9 /* Pods-Sticky Headers with Cell Animations-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sticky Headers with Cell Animations-acknowledgements.plist"; sourceTree = "<group>"; };
-		DAA78BDE7EBDD3ED6F9ADB8C9580BE6D /* Pods-Sticky Headers with Cell Animations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sticky Headers with Cell Animations.debug.xcconfig"; sourceTree = "<group>"; };
-		DB19A275ACEBC7E86F04034CA07189B5 /* Pods-Cell Animations-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cell Animations-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BB47823AEB0D1B340E0BC67D4E2EC7F8 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC5A0C0DF93ED638265CD7039AA9A007 /* Pods-Sticky Headers-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sticky Headers-resources.sh"; sourceTree = "<group>"; };
+		BFDF69117E71B525BA44ED31696B3061 /* Pods-Cell Animations-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cell Animations-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C1FCB3B96A9A1525A54BA04B71877011 /* Pods-Cell Animations-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cell Animations-resources.sh"; sourceTree = "<group>"; };
+		C3C26D783D7F625ED3132F49F7B535D4 /* Pods-Cell Animations-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cell Animations-acknowledgements.plist"; sourceTree = "<group>"; };
+		D2C58DDA47E12587FFF93BDFFB5EF30C /* Pods_Cell_Animations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cell_Animations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41707E18DC6EB6B6431E6A97CF85253 /* Pods_Sticky_Headers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sticky_Headers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFB846E6A499B21514C1E298F56DE3B /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
-		E4FA8E1A4E1553891F65DDB49BC1C7D2 /* Pods_Sticky_Headers_with_Cell_Animations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sticky_Headers_with_Cell_Animations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7ED5648C0C88C2BBB8B1737D3C811DF /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
-		F490012BED3C1257398926C9F31DCEAB /* Pods-Cell Animations-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cell Animations-dummy.m"; sourceTree = "<group>"; };
-		FC91BD5EE8D33990CFEDF8B303B75F2C /* Pods-Sticky Headers with Cell Animations-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sticky Headers with Cell Animations-umbrella.h"; sourceTree = "<group>"; };
-		FCEB050EED1D126E33EA12E989D4D85B /* Pods-Sticky Headers with Cell Animations-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sticky Headers with Cell Animations-resources.sh"; sourceTree = "<group>"; };
+		F1D7E5A6018A0D4362C24B17E8F26EA6 /* Pods-Sticky Headers-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sticky Headers-umbrella.h"; sourceTree = "<group>"; };
+		F6F21EFA57A1D80B0719910C5B684375 /* Pods-Cell Animations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cell Animations.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,43 +118,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5C640140452E9B60FF17D0ADEF3F286 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE7426492C32A0596D41EB5BA1C3FBE3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B0589DCA1F49FFD15AEB576CC1CCA0D /* Targets Support Files */ = {
+		016E8E0A98AB554721C9283E5E3A4A83 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D795531F9A4A622A26EFD0EBA6E4FB00 /* Pods-Cell Animations */,
-				595C00DA76FA116D6EF1E600E02F920E /* Pods-Sticky Headers */,
-				BEF90FD3A37B765F038C2B1C80D6FD61 /* Pods-Sticky Headers with Cell Animations */,
+				A4AFB88BD57CC31C9FC1343FCF8CC252 /* Pods-Cell Animations */,
+				2D2DA1E5A4743A6CA778BEDB92A82848 /* Pods-Sticky Headers */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		595C00DA76FA116D6EF1E600E02F920E /* Pods-Sticky Headers */ = {
+		2D2DA1E5A4743A6CA778BEDB92A82848 /* Pods-Sticky Headers */ = {
 			isa = PBXGroup;
 			children = (
-				CF5BE1697EAA243F24A50F7566AF8DBE /* Info.plist */,
-				A6553DFF915634AB52E13F86431AF135 /* Pods-Sticky Headers.modulemap */,
-				30CE96CC05DE50C20F44C891A67BB7B8 /* Pods-Sticky Headers-acknowledgements.markdown */,
-				A0FBD381E2628DFB0195951A436D4349 /* Pods-Sticky Headers-acknowledgements.plist */,
-				BB75BAE02BCE5F5091FF237D8013B440 /* Pods-Sticky Headers-dummy.m */,
-				2A0B54426A06F028558BAC5939DAD0E8 /* Pods-Sticky Headers-frameworks.sh */,
-				5E32082172EA3C3B4CF0F41AAC509EA6 /* Pods-Sticky Headers-resources.sh */,
-				40529771874C5B468BA94048FF6F4D37 /* Pods-Sticky Headers-umbrella.h */,
-				3C48A40E37F3B33BB42E6F542363B2B7 /* Pods-Sticky Headers.debug.xcconfig */,
-				8B4F9EF93DDC0C7AF6236D90AFB58D83 /* Pods-Sticky Headers.release.xcconfig */,
+				307DC1E2AFD92144D0AB963C7C3F92FF /* Info.plist */,
+				697C7C0755667B61CD51A3B03A57EDC3 /* Pods-Sticky Headers.modulemap */,
+				962C23BFD30990C26C751F7EA2A5E2BB /* Pods-Sticky Headers-acknowledgements.markdown */,
+				31B7B4E9EE710C31AD0BACBEA618FADF /* Pods-Sticky Headers-acknowledgements.plist */,
+				3105D113150FAC023E692EC238BEDD43 /* Pods-Sticky Headers-dummy.m */,
+				17BA2403E487B3A04F274B25462DCF26 /* Pods-Sticky Headers-frameworks.sh */,
+				BC5A0C0DF93ED638265CD7039AA9A007 /* Pods-Sticky Headers-resources.sh */,
+				F1D7E5A6018A0D4362C24B17E8F26EA6 /* Pods-Sticky Headers-umbrella.h */,
+				847CEF24F42B812BB8E20863D0B8A421 /* Pods-Sticky Headers.debug.xcconfig */,
+				84963AA4E33E939FCFE975C431C8AA8E /* Pods-Sticky Headers.release.xcconfig */,
 			);
 			name = "Pods-Sticky Headers";
 			path = "Target Support Files/Pods-Sticky Headers";
+			sourceTree = "<group>";
+		};
+		3BB8E29CD03D111089EFFEB7A8091F61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2C58DDA47E12587FFF93BDFFB5EF30C /* Pods_Cell_Animations.framework */,
+				D41707E18DC6EB6B6431E6A97CF85253 /* Pods_Sticky_Headers.framework */,
+				BB47823AEB0D1B340E0BC67D4E2EC7F8 /* SnapKit.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7A30ADABC44CCA0D9BC282B82A6F71FB /* Support Files */ = {
@@ -198,9 +178,27 @@
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				AAD880A40C1D678CA44C4575218EDE0E /* Pods */,
-				F460503025577700C46067A6574F92B2 /* Products */,
-				3B0589DCA1F49FFD15AEB576CC1CCA0D /* Targets Support Files */,
+				3BB8E29CD03D111089EFFEB7A8091F61 /* Products */,
+				016E8E0A98AB554721C9283E5E3A4A83 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		A4AFB88BD57CC31C9FC1343FCF8CC252 /* Pods-Cell Animations */ = {
+			isa = PBXGroup;
+			children = (
+				565F08530C520094DC149459439E4DFB /* Info.plist */,
+				B13BE43F0CD3E546630C2DE3E2178C8D /* Pods-Cell Animations.modulemap */,
+				BFDF69117E71B525BA44ED31696B3061 /* Pods-Cell Animations-acknowledgements.markdown */,
+				C3C26D783D7F625ED3132F49F7B535D4 /* Pods-Cell Animations-acknowledgements.plist */,
+				7B9D0558BBF5FB3D94EF0F878E46FC9B /* Pods-Cell Animations-dummy.m */,
+				AEDE01F1D6A252B87609CFE4D1897A65 /* Pods-Cell Animations-frameworks.sh */,
+				C1FCB3B96A9A1525A54BA04B71877011 /* Pods-Cell Animations-resources.sh */,
+				72AB8EAF26380821649EF5F3CEFA208C /* Pods-Cell Animations-umbrella.h */,
+				F6F21EFA57A1D80B0719910C5B684375 /* Pods-Cell Animations.debug.xcconfig */,
+				1BD74081F5B1B80E921CB417CACB4632 /* Pods-Cell Animations.release.xcconfig */,
+			);
+			name = "Pods-Cell Animations";
+			path = "Target Support Files/Pods-Cell Animations";
 			sourceTree = "<group>";
 		};
 		AAD880A40C1D678CA44C4575218EDE0E /* Pods */ = {
@@ -239,24 +237,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BEF90FD3A37B765F038C2B1C80D6FD61 /* Pods-Sticky Headers with Cell Animations */ = {
-			isa = PBXGroup;
-			children = (
-				A100B4BB1CE2343E93C43570DC9F5F4E /* Info.plist */,
-				8DD9EF6C3A8CED80B8122B095B78D38C /* Pods-Sticky Headers with Cell Animations.modulemap */,
-				43A9373C7469F832A70F331084AD831B /* Pods-Sticky Headers with Cell Animations-acknowledgements.markdown */,
-				D6C2946EB6F119AD02CF0BEAA0493DE9 /* Pods-Sticky Headers with Cell Animations-acknowledgements.plist */,
-				B25E1C9749B7D58680EDA5B1CBB41618 /* Pods-Sticky Headers with Cell Animations-dummy.m */,
-				510D05719BA3FE5F7E5B283DD5FFE100 /* Pods-Sticky Headers with Cell Animations-frameworks.sh */,
-				FCEB050EED1D126E33EA12E989D4D85B /* Pods-Sticky Headers with Cell Animations-resources.sh */,
-				FC91BD5EE8D33990CFEDF8B303B75F2C /* Pods-Sticky Headers with Cell Animations-umbrella.h */,
-				DAA78BDE7EBDD3ED6F9ADB8C9580BE6D /* Pods-Sticky Headers with Cell Animations.debug.xcconfig */,
-				7DE48CC5AE61DF35900C9E72181D7925 /* Pods-Sticky Headers with Cell Animations.release.xcconfig */,
-			);
-			name = "Pods-Sticky Headers with Cell Animations";
-			path = "Target Support Files/Pods-Sticky Headers with Cell Animations";
-			sourceTree = "<group>";
-		};
 		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,46 +245,9 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		D795531F9A4A622A26EFD0EBA6E4FB00 /* Pods-Cell Animations */ = {
-			isa = PBXGroup;
-			children = (
-				0B76C0A4D9F94A70B89995BEA94E72E9 /* Info.plist */,
-				4A84EF35E18D0DCAB27804ED2938FF1E /* Pods-Cell Animations.modulemap */,
-				DB19A275ACEBC7E86F04034CA07189B5 /* Pods-Cell Animations-acknowledgements.markdown */,
-				D3D19F00F56DD684B9156FD127E717A8 /* Pods-Cell Animations-acknowledgements.plist */,
-				F490012BED3C1257398926C9F31DCEAB /* Pods-Cell Animations-dummy.m */,
-				001461809F7059631914D40FEDCC332C /* Pods-Cell Animations-frameworks.sh */,
-				04280954638898C1F8A388E3CF7926BF /* Pods-Cell Animations-resources.sh */,
-				552F6E12199C9145B5CF9BD1DA9D7295 /* Pods-Cell Animations-umbrella.h */,
-				71DB3A582DF401F9FBBDE52544566D47 /* Pods-Cell Animations.debug.xcconfig */,
-				14BBAC94B398B90371C94AACABB1CF8D /* Pods-Cell Animations.release.xcconfig */,
-			);
-			name = "Pods-Cell Animations";
-			path = "Target Support Files/Pods-Cell Animations";
-			sourceTree = "<group>";
-		};
-		F460503025577700C46067A6574F92B2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2A534D764ECC64395D92A336E7BCD2D2 /* Pods_Cell_Animations.framework */,
-				1934363EEB9D68B7ACA5D981BC1A7C79 /* Pods_Sticky_Headers.framework */,
-				E4FA8E1A4E1553891F65DDB49BC1C7D2 /* Pods_Sticky_Headers_with_Cell_Animations.framework */,
-				1241BFDAF3DCD5025A78267E9D12F3F6 /* SnapKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4D6A2AD0E3C5998327B92E06C2F06A4F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7C583BC82788313D4AFD117CF6DECF3 /* Pods-Sticky Headers with Cell Animations-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8A2C4F20CF783157F1516BEDD8BF60B1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,25 +290,7 @@
 			);
 			name = "Pods-Sticky Headers";
 			productName = "Pods-Sticky Headers";
-			productReference = 1934363EEB9D68B7ACA5D981BC1A7C79 /* Pods_Sticky_Headers.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		36D3F39091C9A5C9360EDE26C150C48A /* Pods-Sticky Headers with Cell Animations */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 10A9C6499CE1A12A9F6F69635EDFAD3B /* Build configuration list for PBXNativeTarget "Pods-Sticky Headers with Cell Animations" */;
-			buildPhases = (
-				F618556A6D871E06B5AB0FFDB55C4933 /* Sources */,
-				C5C640140452E9B60FF17D0ADEF3F286 /* Frameworks */,
-				4D6A2AD0E3C5998327B92E06C2F06A4F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				596AD60476579999DC025BD027DB4855 /* PBXTargetDependency */,
-			);
-			name = "Pods-Sticky Headers with Cell Animations";
-			productName = "Pods-Sticky Headers with Cell Animations";
-			productReference = E4FA8E1A4E1553891F65DDB49BC1C7D2 /* Pods_Sticky_Headers_with_Cell_Animations.framework */;
+			productReference = D41707E18DC6EB6B6431E6A97CF85253 /* Pods_Sticky_Headers.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5EA938C1D92CBA03AB298E5B1544E8EE /* SnapKit */ = {
@@ -382,7 +307,7 @@
 			);
 			name = SnapKit;
 			productName = SnapKit;
-			productReference = 1241BFDAF3DCD5025A78267E9D12F3F6 /* SnapKit.framework */;
+			productReference = BB47823AEB0D1B340E0BC67D4E2EC7F8 /* SnapKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6BE2E66E4A9FFF61C44CEE1E3C35080D /* Pods-Cell Animations */ = {
@@ -400,7 +325,7 @@
 			);
 			name = "Pods-Cell Animations";
 			productName = "Pods-Cell Animations";
-			productReference = 2A534D764ECC64395D92A336E7BCD2D2 /* Pods_Cell_Animations.framework */;
+			productReference = D2C58DDA47E12587FFF93BDFFB5EF30C /* Pods_Cell_Animations.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -420,13 +345,12 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = F460503025577700C46067A6574F92B2 /* Products */;
+			productRefGroup = 3BB8E29CD03D111089EFFEB7A8091F61 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				6BE2E66E4A9FFF61C44CEE1E3C35080D /* Pods-Cell Animations */,
 				20D663EC4549514140ACF8A22A511DD8 /* Pods-Sticky Headers */,
-				36D3F39091C9A5C9360EDE26C150C48A /* Pods-Sticky Headers with Cell Animations */,
 				5EA938C1D92CBA03AB298E5B1544E8EE /* SnapKit */,
 			);
 		};
@@ -469,14 +393,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F618556A6D871E06B5AB0FFDB55C4933 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				117B3CF0BBAE3138D2E0296082156088 /* Pods-Sticky Headers with Cell Animations-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -485,12 +401,6 @@
 			name = SnapKit;
 			target = 5EA938C1D92CBA03AB298E5B1544E8EE /* SnapKit */;
 			targetProxy = D707196408A87FB3A9EC5ECD7D1B9693 /* PBXContainerItemProxy */;
-		};
-		596AD60476579999DC025BD027DB4855 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SnapKit;
-			target = 5EA938C1D92CBA03AB298E5B1544E8EE /* SnapKit */;
-			targetProxy = 8309EDDF447C01A1E671356CD6AA2FB1 /* PBXContainerItemProxy */;
 		};
 		6DFB8CAFDF5C6B38C9386D2873D0B49B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -503,7 +413,7 @@
 /* Begin XCBuildConfiguration section */
 		17686E0EA360B25A83DADC87FDD01C3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14BBAC94B398B90371C94AACABB1CF8D /* Pods-Cell Animations.release.xcconfig */;
+			baseConfigurationReference = 1BD74081F5B1B80E921CB417CACB4632 /* Pods-Cell Animations.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -530,37 +440,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		2CBEE4590AD43A5613085ACC52099682 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAA78BDE7EBDD3ED6F9ADB8C9580BE6D /* Pods-Sticky Headers with Cell Animations.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Sticky Headers with Cell Animations/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Sticky Headers with Cell Animations/Pods-Sticky Headers with Cell Animations.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Sticky_Headers_with_Cell_Animations;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		511103F7F15A7E8F83B268EA03462CAB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -593,36 +472,6 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		8443A2823547EC1218EF94E7016FAEA5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DE48CC5AE61DF35900C9E72181D7925 /* Pods-Sticky Headers with Cell Animations.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Sticky Headers with Cell Animations/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Sticky Headers with Cell Animations/Pods-Sticky Headers with Cell Animations.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Sticky_Headers_with_Cell_Animations;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -667,7 +516,7 @@
 		};
 		C661BD6AF904A362A1039221D27204D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B4F9EF93DDC0C7AF6236D90AFB58D83 /* Pods-Sticky Headers.release.xcconfig */;
+			baseConfigurationReference = 84963AA4E33E939FCFE975C431C8AA8E /* Pods-Sticky Headers.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -697,7 +546,7 @@
 		};
 		D50EBB33238B55DFE6D7FD45BB0F6A2A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71DB3A582DF401F9FBBDE52544566D47 /* Pods-Cell Animations.debug.xcconfig */;
+			baseConfigurationReference = F6F21EFA57A1D80B0719910C5B684375 /* Pods-Cell Animations.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -783,7 +632,7 @@
 		};
 		FA5E5359F0565D699F6EA62CDCC62E74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C48A40E37F3B33BB42E6F542363B2B7 /* Pods-Sticky Headers.debug.xcconfig */;
+			baseConfigurationReference = 847CEF24F42B812BB8E20863D0B8A421 /* Pods-Sticky Headers.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -820,15 +669,6 @@
 			buildConfigurations = (
 				FA5E5359F0565D699F6EA62CDCC62E74 /* Debug */,
 				C661BD6AF904A362A1039221D27204D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		10A9C6499CE1A12A9F6F69635EDFAD3B /* Build configuration list for PBXNativeTarget "Pods-Sticky Headers with Cell Animations" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2CBEE4590AD43A5613085ACC52099682 /* Debug */,
-				8443A2823547EC1218EF94E7016FAEA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

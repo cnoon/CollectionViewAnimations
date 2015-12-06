@@ -1,6 +1,6 @@
 //
 //  InvalidationContext.swift
-//  Sticky Headers with Cell Animations
+//  Sticky Headers
 //
 //  Created by Christian Noon on 11/3/15.
 //  Copyright © 2015 Noondev. All rights reserved.

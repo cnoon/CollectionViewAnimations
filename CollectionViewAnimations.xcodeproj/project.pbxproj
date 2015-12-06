@@ -7,20 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08177A0F661F3BEF6AAF0142 /* Pods_Sticky_Headers_with_Cell_Animations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE31EDBDB05B712895C68A2E /* Pods_Sticky_Headers_with_Cell_Animations.framework */; };
 		21BD27A4EFCB4B4589CEE050 /* Pods_Cell_Animations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B0C738F122481738B46FB2 /* Pods_Cell_Animations.framework */; };
 		2B6C62ACADAE1B9AF11C22A3 /* Pods_Sticky_Headers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CA380166A1B64BC147E879 /* Pods_Sticky_Headers.framework */; };
 		4C61C6F41C13C03C00205047 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61C6F21C13C03C00205047 /* Layout.swift */; };
 		4C61C6F51C13C03C00205047 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61C6F31C13C03C00205047 /* ViewController.swift */; };
-		4C61C6F61C13C06D00205047 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8BE1C13BB8E004ADF5C /* Layout.swift */; };
-		4C61C6F71C13C06D00205047 /* InvalidationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8C01C13BB8E004ADF5C /* InvalidationContext.swift */; };
-		4C61C6F81C13C06D00205047 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8C11C13BB8E004ADF5C /* ViewController.swift */; };
-		4CAAD8C21C13BB8E004ADF5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8B51C13BB8E004ADF5C /* AppDelegate.swift */; };
-		4CAAD8C31C13BB8E004ADF5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAAD8B61C13BB8E004ADF5C /* Assets.xcassets */; };
-		4CAAD8C41C13BB8E004ADF5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAAD8B71C13BB8E004ADF5C /* LaunchScreen.storyboard */; };
-		4CAAD8C51C13BB8E004ADF5C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8B91C13BB8E004ADF5C /* Cell.swift */; };
-		4CAAD8C61C13BB8E004ADF5C /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8BA1C13BB8E004ADF5C /* Number.swift */; };
-		4CAAD8C71C13BB8E004ADF5C /* UIColor+CVA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8BB1C13BB8E004ADF5C /* UIColor+CVA.swift */; };
+		4C61C6FC1C14BAFD00205047 /* InvalidationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61C6F91C14BAFD00205047 /* InvalidationContext.swift */; };
+		4C61C6FD1C14BAFD00205047 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61C6FA1C14BAFD00205047 /* Layout.swift */; };
+		4C61C6FE1C14BAFD00205047 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61C6FB1C14BAFD00205047 /* ViewController.swift */; };
 		4CAAD8D11C13BBFB004ADF5C /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8BA1C13BB8E004ADF5C /* Number.swift */; };
 		4CAAD8D21C13BBFB004ADF5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8B51C13BB8E004ADF5C /* AppDelegate.swift */; };
 		4CAAD8D41C13BBFB004ADF5C /* UIColor+CVA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAAD8BB1C13BB8E004ADF5C /* UIColor+CVA.swift */; };
@@ -41,16 +34,15 @@
 		47B2BD7A0A542694484B4E20 /* Pods-Cell Animations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cell Animations.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cell Animations/Pods-Cell Animations.release.xcconfig"; sourceTree = "<group>"; };
 		4C61C6F21C13C03C00205047 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		4C61C6F31C13C03C00205047 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C79D3421BE3145000E4EB66 /* Sticky Headers With Cell Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sticky Headers With Cell Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C61C6F91C14BAFD00205047 /* InvalidationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvalidationContext.swift; sourceTree = "<group>"; };
+		4C61C6FA1C14BAFD00205047 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		4C61C6FB1C14BAFD00205047 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CAAD8B51C13BB8E004ADF5C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CAAD8B61C13BB8E004ADF5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CAAD8B81C13BB8E004ADF5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CAAD8B91C13BB8E004ADF5C /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		4CAAD8BA1C13BB8E004ADF5C /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		4CAAD8BB1C13BB8E004ADF5C /* UIColor+CVA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CVA.swift"; sourceTree = "<group>"; };
-		4CAAD8BE1C13BB8E004ADF5C /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		4CAAD8C01C13BB8E004ADF5C /* InvalidationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvalidationContext.swift; sourceTree = "<group>"; };
-		4CAAD8C11C13BB8E004ADF5C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CAAD8E31C13BBFB004ADF5C /* Sticky Headers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sticky Headers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CAAD8F91C13BC09004ADF5C /* Cell Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cell Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CAAD8FA1C13BC5A004ADF5C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,14 +55,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4C79D33F1BE3145000E4EB66 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08177A0F661F3BEF6AAF0142 /* Pods_Sticky_Headers_with_Cell_Animations.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4CAAD8D81C13BBFB004ADF5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,7 +97,6 @@
 		4C79D3431BE3145000E4EB66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C79D3421BE3145000E4EB66 /* Sticky Headers With Cell Animations.app */,
 				4CAAD8E31C13BBFB004ADF5C /* Sticky Headers.app */,
 				4CAAD8F91C13BC09004ADF5C /* Cell Animations.app */,
 			);
@@ -126,7 +109,6 @@
 				4CAAD8B41C13BB8E004ADF5C /* Common */,
 				4CAAD8B31C13BB8E004ADF5C /* Cell Animations */,
 				4CAAD8BC1C13BB8E004ADF5C /* Sticky Headers */,
-				4CAAD8BD1C13BB8E004ADF5C /* Sticky Headers with Cell Animations */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -155,18 +137,11 @@
 		4CAAD8BC1C13BB8E004ADF5C /* Sticky Headers */ = {
 			isa = PBXGroup;
 			children = (
+				4C61C6F91C14BAFD00205047 /* InvalidationContext.swift */,
+				4C61C6FA1C14BAFD00205047 /* Layout.swift */,
+				4C61C6FB1C14BAFD00205047 /* ViewController.swift */,
 			);
 			path = "Sticky Headers";
-			sourceTree = "<group>";
-		};
-		4CAAD8BD1C13BB8E004ADF5C /* Sticky Headers with Cell Animations */ = {
-			isa = PBXGroup;
-			children = (
-				4CAAD8BE1C13BB8E004ADF5C /* Layout.swift */,
-				4CAAD8C01C13BB8E004ADF5C /* InvalidationContext.swift */,
-				4CAAD8C11C13BB8E004ADF5C /* ViewController.swift */,
-			);
-			path = "Sticky Headers with Cell Animations";
 			sourceTree = "<group>";
 		};
 		4CAAD8CD1C13BBB8004ADF5C /* Support */ = {
@@ -195,26 +170,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C79D3411BE3145000E4EB66 /* Sticky Headers with Cell Animations */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4C79D3541BE3145000E4EB66 /* Build configuration list for PBXNativeTarget "Sticky Headers with Cell Animations" */;
-			buildPhases = (
-				C3062D466974D7D5FAB40DC1 /* Check Pods Manifest.lock */,
-				4C79D33E1BE3145000E4EB66 /* Sources */,
-				4C79D33F1BE3145000E4EB66 /* Frameworks */,
-				4C79D3401BE3145000E4EB66 /* Resources */,
-				1328615B63446174A1A833F2 /* Embed Pods Frameworks */,
-				CE2418762FA8D5C187BF3AE7 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Sticky Headers with Cell Animations";
-			productName = CollectionViewAnimations;
-			productReference = 4C79D3421BE3145000E4EB66 /* Sticky Headers With Cell Animations.app */;
-			productType = "com.apple.product-type.application";
-		};
 		4CAAD8CE1C13BBFB004ADF5C /* Sticky Headers */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CAAD8E01C13BBFB004ADF5C /* Build configuration list for PBXNativeTarget "Sticky Headers" */;
@@ -264,11 +219,6 @@
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Noondev;
-				TargetAttributes = {
-					4C79D3411BE3145000E4EB66 = {
-						CreatedOnToolsVersion = 7.1;
-					};
-				};
 			};
 			buildConfigurationList = 4C79D33D1BE3145000E4EB66 /* Build configuration list for PBXProject "CollectionViewAnimations" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -285,21 +235,11 @@
 			targets = (
 				4CAAD8E41C13BC09004ADF5C /* Cell Animations */,
 				4CAAD8CE1C13BBFB004ADF5C /* Sticky Headers */,
-				4C79D3411BE3145000E4EB66 /* Sticky Headers with Cell Animations */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4C79D3401BE3145000E4EB66 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CAAD8C41C13BB8E004ADF5C /* LaunchScreen.storyboard in Resources */,
-				4CAAD8C31C13BB8E004ADF5C /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4CAAD8DA1C13BBFB004ADF5C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,21 +261,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1328615B63446174A1A833F2 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sticky Headers with Cell Animations/Pods-Sticky Headers with Cell Animations-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4CAAD8CF1C13BBFB004ADF5C /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,53 +351,9 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cell Animations/Pods-Cell Animations-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C3062D466974D7D5FAB40DC1 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CE2418762FA8D5C187BF3AE7 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sticky Headers with Cell Animations/Pods-Sticky Headers with Cell Animations-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4C79D33E1BE3145000E4EB66 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C61C6F61C13C06D00205047 /* Layout.swift in Sources */,
-				4CAAD8C61C13BB8E004ADF5C /* Number.swift in Sources */,
-				4CAAD8C21C13BB8E004ADF5C /* AppDelegate.swift in Sources */,
-				4C61C6F71C13C06D00205047 /* InvalidationContext.swift in Sources */,
-				4C61C6F81C13C06D00205047 /* ViewController.swift in Sources */,
-				4CAAD8C71C13BB8E004ADF5C /* UIColor+CVA.swift in Sources */,
-				4CAAD8C51C13BB8E004ADF5C /* Cell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4CAAD8D01C13BBFB004ADF5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +362,9 @@
 				4CAAD8D21C13BBFB004ADF5C /* AppDelegate.swift in Sources */,
 				4CAAD8D41C13BBFB004ADF5C /* UIColor+CVA.swift in Sources */,
 				4CAAD8D51C13BBFB004ADF5C /* Cell.swift in Sources */,
+				4C61C6FE1C14BAFD00205047 /* ViewController.swift in Sources */,
+				4C61C6FC1C14BAFD00205047 /* InvalidationContext.swift in Sources */,
+				4C61C6FD1C14BAFD00205047 /* Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,36 +476,6 @@
 			};
 			name = Release;
 		};
-		4C79D3551BE3145000E4EB66 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D02D92C334A4346F057CF17 /* Pods-Sticky Headers with Cell Animations.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Source/Common/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.noondev.StickeyHeadersWithCellAnimations;
-				PRODUCT_NAME = "Sticky Headers With Cell Animations";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		4C79D3561BE3145000E4EB66 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A30CAC018488481DF5AFC43B /* Pods-Sticky Headers with Cell Animations.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Source/Common/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.noondev.StickeyHeadersWithCellAnimations;
-				PRODUCT_NAME = "Sticky Headers With Cell Animations";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 		4CAAD8E11C13BBFB004ADF5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8153AFA79F917E6EB3AD340 /* Pods-Sticky Headers.debug.xcconfig */;
@@ -694,15 +548,6 @@
 			buildConfigurations = (
 				4C79D3521BE3145000E4EB66 /* Debug */,
 				4C79D3531BE3145000E4EB66 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4C79D3541BE3145000E4EB66 /* Build configuration list for PBXNativeTarget "Sticky Headers with Cell Animations" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4C79D3551BE3145000E4EB66 /* Debug */,
-				4C79D3561BE3145000E4EB66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
