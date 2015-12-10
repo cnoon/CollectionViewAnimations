@@ -226,27 +226,20 @@ class Layout: UICollectionViewLayout {
     override func invalidateLayoutWithContext(context: UICollectionViewLayoutInvalidationContext) {
         let invalidationContext = context as! InvalidationContext
 
-        guard invalidationContext.invalidateEverything || invalidationContext.invalidateSectionHeaders else { return }
+        if invalidationContext.invalidateSectionHeaders {
+            prepareSectionHeaderAttributes()
 
-        guard !invalidationContext.invalidateEverything else {
-            super.invalidateLayoutWithContext(invalidationContext)
-            return
+            var sectionHeaderIndexPaths: [NSIndexPath] = []
+
+            for sectionIndex in 0..<currentSectionAttributes.count {
+                sectionHeaderIndexPaths.append(NSIndexPath(forItem: 0, inSection: sectionIndex))
+            }
+
+            invalidationContext.invalidateSupplementaryElementsOfKind(
+                SectionHeaderCell.kind,
+                atIndexPaths: sectionHeaderIndexPaths
+            )
         }
-
-        //============== Recompute Section Headers =================
-
-        prepareSectionHeaderAttributes()
-
-        var sectionHeaderIndexPaths: [NSIndexPath] = []
-
-        for sectionIndex in 0..<currentSectionAttributes.count {
-            sectionHeaderIndexPaths.append(NSIndexPath(forItem: 0, inSection: sectionIndex))
-        }
-
-        invalidationContext.invalidateSupplementaryElementsOfKind(
-            SectionHeaderCell.kind,
-            atIndexPaths: sectionHeaderIndexPaths
-        )
 
         super.invalidateLayoutWithContext(invalidationContext)
     }
