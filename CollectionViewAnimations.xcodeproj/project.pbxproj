@@ -220,6 +220,9 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Noondev;
 				TargetAttributes = {
+					4CAAD8CE1C13BBFB004ADF5C = {
+						LastSwiftMigration = 0830;
+					};
 					4CAAD8E41C13BC09004ADF5C = {
 						LastSwiftMigration = 0830;
 					};
@@ -498,6 +501,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noondev.StickyHeaders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -516,6 +520,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noondev.StickyHeaders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;

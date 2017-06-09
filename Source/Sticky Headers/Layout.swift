@@ -29,26 +29,26 @@ class Layout: UICollectionViewLayout {
 
     let sectionHeaderHeight: CGFloat = 40
 
-    var contentSize = CGSizeZero
-    var selectedCellIndexPath: NSIndexPath?
+    var contentSize = CGSize.zero
+    var selectedCellIndexPath: IndexPath?
 
     // MARK: - Preparation
 
-    override func prepareLayout() {
-        super.prepareLayout()
+    override func prepare() {
+        super.prepare()
 
         prepareContentCellAttributes()
         prepareSectionHeaderAttributes()
     }
 
-    private func prepareContentCellAttributes() {
+    fileprivate func prepareContentCellAttributes() {
         guard let collectionView = collectionView else { return }
 
         //================== Reset Content Cell Attributes ================
 
         previousAttributes = currentAttributes
 
-        contentSize = CGSizeZero
+        contentSize = CGSize.zero
         currentAttributes = []
         currentSectionLimits = []
 
@@ -57,8 +57,8 @@ class Layout: UICollectionViewLayout {
         let width = collectionView.bounds.size.width
         var y: CGFloat = 0
 
-        for sectionIndex in 0..<collectionView.numberOfSections() {
-            let itemCount = collectionView.numberOfItemsInSection(sectionIndex)
+        for sectionIndex in 0..<collectionView.numberOfSections {
+            let itemCount = collectionView.numberOfItems(inSection: sectionIndex)
             let sectionTop = y
 
             y += sectionHeaderHeight
@@ -66,14 +66,14 @@ class Layout: UICollectionViewLayout {
             var attributesList: [UICollectionViewLayoutAttributes] = []
 
             for itemIndex in 0..<itemCount {
-                let indexPath = NSIndexPath(forItem: itemIndex, inSection: sectionIndex)
-                let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+                let indexPath = IndexPath(item: itemIndex, section: sectionIndex)
+                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 let size = CGSize(
                     width: width,
                     height: indexPath == selectedCellIndexPath ? 300.0 : 100.0
                 )
 
-                attributes.frame = CGRectMake(0, y, width, size.height)
+                attributes.frame = CGRect(x: 0, y: y, width: width, height: size.height)
 
                 attributesList.append(attributes)
 
@@ -86,10 +86,10 @@ class Layout: UICollectionViewLayout {
             currentAttributes.append(attributesList)
         }
 
-        contentSize = CGSizeMake(width, y)
+        contentSize = CGSize(width: width, height: y)
     }
 
-    private func prepareSectionHeaderAttributes() {
+    fileprivate func prepareSectionHeaderAttributes() {
         guard let collectionView = collectionView else { return }
 
         //================== Reset Section Attributes ====================
@@ -104,20 +104,20 @@ class Layout: UICollectionViewLayout {
         let collectionViewTop = collectionView.contentOffset.y
         let aboveCollectionViewTop = collectionViewTop - sectionHeaderHeight
 
-        for sectionIndex in 0..<collectionView.numberOfSections() {
+        for sectionIndex in 0..<collectionView.numberOfSections {
             let sectionLimit = currentSectionLimits[sectionIndex]
 
             //================= Add Section Header Attributes =================
 
-            let indexPath = NSIndexPath(forItem: 0, inSection: sectionIndex)
+            let indexPath = IndexPath(item: 0, section: sectionIndex)
 
             let attributes = UICollectionViewLayoutAttributes(
                 forSupplementaryViewOfKind: SectionHeaderCell.kind,
-                withIndexPath: indexPath
+                with: indexPath
             )
 
             attributes.zIndex = 1
-            attributes.frame = CGRectMake(0, sectionLimit.top, width, sectionHeaderHeight)
+            attributes.frame = CGRect(x: 0, y: sectionLimit.top, width: width, height: sectionHeaderHeight)
 
             //================== Set the y-position ==================
 
@@ -135,29 +135,29 @@ class Layout: UICollectionViewLayout {
 
     // MARK: - Layout Attributes - Content Cell
 
-    override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+    override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return previousAttributes[itemIndexPath.section][itemIndexPath.item]
     }
 
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return currentAttributes[indexPath.section][indexPath.item]
     }
 
-    override func finalLayoutAttributesForDisappearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        return layoutAttributesForItemAtIndexPath(itemIndexPath)
+    override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        return layoutAttributesForItem(at: itemIndexPath)
     }
 
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var attributes: [UICollectionViewLayoutAttributes] = []
 
-        for sectionIndex in 0..<(collectionView?.numberOfSections() ?? 0) {
+        for sectionIndex in 0..<(collectionView?.numberOfSections ?? 0) {
             let sectionAttributes = currentSectionAttributes[sectionIndex]
 
-            if CGRectIntersectsRect(rect, sectionAttributes.frame) {
+            if rect.intersects(sectionAttributes.frame) {
                 attributes.append(sectionAttributes)
             }
 
-            for item in currentAttributes[sectionIndex] where CGRectIntersectsRect(rect, item.frame) {
+            for item in currentAttributes[sectionIndex] where rect.intersects(item.frame) {
                 attributes.append(item)
             }
         }
@@ -167,48 +167,48 @@ class Layout: UICollectionViewLayout {
 
     // MARK: - Layout Attributes - Section Header Cell
 
-    override func initialLayoutAttributesForAppearingSupplementaryElementOfKind(
-        elementKind: String,
-        atIndexPath elementIndexPath: NSIndexPath)
+    override func initialLayoutAttributesForAppearingSupplementaryElement(
+        ofKind elementKind: String,
+        at elementIndexPath: IndexPath)
         -> UICollectionViewLayoutAttributes?
     {
         return previousSectionAttributes[elementIndexPath.section]
     }
 
-    override func layoutAttributesForSupplementaryViewOfKind(
-        elementKind: String,
-        atIndexPath indexPath: NSIndexPath)
+    override func layoutAttributesForSupplementaryView(
+        ofKind elementKind: String,
+        at indexPath: IndexPath)
         -> UICollectionViewLayoutAttributes?
     {
         return currentSectionAttributes[indexPath.section]
     }
 
-    override func finalLayoutAttributesForDisappearingSupplementaryElementOfKind(
-        elementKind: String,
-        atIndexPath elementIndexPath: NSIndexPath)
+    override func finalLayoutAttributesForDisappearingSupplementaryElement(
+        ofKind elementKind: String,
+        at elementIndexPath: IndexPath)
         -> UICollectionViewLayoutAttributes?
     {
-        return layoutAttributesForSupplementaryViewOfKind(elementKind, atIndexPath: elementIndexPath)
+        return layoutAttributesForSupplementaryView(ofKind: elementKind, at: elementIndexPath)
     }
 
     // MARK: - Invalidation
 
-    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
 
-    override class func invalidationContextClass() -> AnyClass {
+    override class var invalidationContextClass : AnyClass {
         return InvalidationContext.self
     }
 
-    override func invalidationContextForBoundsChange(newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
-        let invalidationContext = super.invalidationContextForBoundsChange(newBounds) as! InvalidationContext
+    override func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
+        let invalidationContext = super.invalidationContext(forBoundsChange: newBounds) as! InvalidationContext
 
         guard let oldBounds = collectionView?.bounds else { return invalidationContext }
         guard oldBounds != newBounds else { return invalidationContext }
 
-        let originChanged = !CGPointEqualToPoint(oldBounds.origin, newBounds.origin)
-        let sizeChanged = !CGSizeEqualToSize(oldBounds.size, newBounds.size)
+        let originChanged = !oldBounds.origin.equalTo(newBounds.origin)
+        let sizeChanged = !oldBounds.size.equalTo(newBounds.size)
 
         if sizeChanged {
             invalidationContext.shouldInvalidateEverything = true
@@ -223,39 +223,39 @@ class Layout: UICollectionViewLayout {
         return invalidationContext
     }
 
-    override func invalidateLayoutWithContext(context: UICollectionViewLayoutInvalidationContext) {
+    override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
         let invalidationContext = context as! InvalidationContext
 
         if invalidationContext.invalidateSectionHeaders {
             prepareSectionHeaderAttributes()
 
-            var sectionHeaderIndexPaths: [NSIndexPath] = []
+            var sectionHeaderIndexPaths: [IndexPath] = []
 
             for sectionIndex in 0..<currentSectionAttributes.count {
-                sectionHeaderIndexPaths.append(NSIndexPath(forItem: 0, inSection: sectionIndex))
+                sectionHeaderIndexPaths.append(IndexPath(item: 0, section: sectionIndex))
             }
 
-            invalidationContext.invalidateSupplementaryElementsOfKind(
-                SectionHeaderCell.kind,
-                atIndexPaths: sectionHeaderIndexPaths
+            invalidationContext.invalidateSupplementaryElements(
+                ofKind: SectionHeaderCell.kind,
+                at: sectionHeaderIndexPaths
             )
         }
 
-        super.invalidateLayoutWithContext(invalidationContext)
+        super.invalidateLayout(with: invalidationContext)
     }
 
     // MARK: - Collection View Info
 
-    override func collectionViewContentSize() -> CGSize {
+    override var collectionViewContentSize : CGSize {
         return contentSize
     }
 
-    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint) -> CGPoint {
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         guard let selectedCellIndexPath = selectedCellIndexPath else { return proposedContentOffset }
 
         var finalContentOffset = proposedContentOffset
 
-        if let frame = layoutAttributesForItemAtIndexPath(selectedCellIndexPath)?.frame {
+        if let frame = layoutAttributesForItem(at: selectedCellIndexPath)?.frame {
             let collectionViewHeight = collectionView?.bounds.size.height ?? 0
 
             let collectionViewTop = proposedContentOffset.y
@@ -265,9 +265,9 @@ class Layout: UICollectionViewLayout {
             let cellBottom = cellTop + frame.size.height
 
             if cellBottom > collectionViewBottom {
-                finalContentOffset = CGPointMake(0.0, collectionViewTop + (cellBottom - collectionViewBottom))
+                finalContentOffset = CGPoint(x: 0.0, y: collectionViewTop + (cellBottom - collectionViewBottom))
             } else if cellTop < collectionViewTop + sectionHeaderHeight {
-                finalContentOffset = CGPointMake(0.0, collectionViewTop - (collectionViewTop - cellTop) - sectionHeaderHeight)
+                finalContentOffset = CGPoint(x: 0.0, y: collectionViewTop - (collectionViewTop - cellTop) - sectionHeaderHeight)
             }
         }
 
