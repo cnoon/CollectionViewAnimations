@@ -21,8 +21,8 @@ class ContentCell: UICollectionViewCell {
 
         label = {
             let label = UILabel()
-            label.font = UIFont.systemFontOfSize(20)
-            label.textColor = UIColor.whiteColor()
+            label.font = UIFont.systemFont(ofSize: 20)
+            label.textColor = UIColor.white
 
             return label
         }()
@@ -46,8 +46,8 @@ class ContentCell: UICollectionViewCell {
 
     // MARK: Layout
 
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
-        super.applyLayoutAttributes(layoutAttributes)
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
         layoutIfNeeded()
     }
 }
@@ -69,8 +69,8 @@ class SectionHeaderCell: UICollectionReusableView {
 
         label = {
             let label = UILabel()
-            label.font = UIFont.boldSystemFontOfSize(14)
-            label.textColor = UIColor.whiteColor()
+            label.font = UIFont.boldSystemFont(ofSize: 14)
+            label.textColor = UIColor.white
 
             return label
         }()
@@ -90,8 +90,8 @@ class SectionHeaderCell: UICollectionReusableView {
 
     // MARK: Layout
 
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
-        super.applyLayoutAttributes(layoutAttributes)
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
         layoutIfNeeded()
     }
 }
