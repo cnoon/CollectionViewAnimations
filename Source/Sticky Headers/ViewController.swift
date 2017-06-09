@@ -68,7 +68,7 @@ class ViewController: UIViewController {
 
         view.addSubview(collectionView)
 
-        collectionView.snp_makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
     }

@@ -29,7 +29,7 @@ class ContentCell: UICollectionViewCell {
 
         contentView.addSubview(label)
 
-        label.snp_makeConstraints { make in
+        label.snp.makeConstraints { make in
             make.center.equalTo(contentView)
         }
     }
@@ -77,7 +77,7 @@ class SectionHeaderCell: UICollectionReusableView {
 
         addSubview(label)
 
-        label.snp_makeConstraints { make in
+        label.snp.makeConstraints { make in
             make.leading.equalTo(self).offset(20)
             make.trailing.equalTo(self).offset(-20)
             make.centerY.equalTo(self)
