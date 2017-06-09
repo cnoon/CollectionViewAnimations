@@ -174,12 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CAAD8E01C13BBFB004ADF5C /* Build configuration list for PBXNativeTarget "Sticky Headers" */;
 			buildPhases = (
-				4CAAD8CF1C13BBFB004ADF5C /* Check Pods Manifest.lock */,
+				4CAAD8CF1C13BBFB004ADF5C /* [CP] Check Pods Manifest.lock */,
 				4CAAD8D01C13BBFB004ADF5C /* Sources */,
 				4CAAD8D81C13BBFB004ADF5C /* Frameworks */,
 				4CAAD8DA1C13BBFB004ADF5C /* Resources */,
-				4CAAD8DE1C13BBFB004ADF5C /* Embed Pods Frameworks */,
-				4CAAD8DF1C13BBFB004ADF5C /* Copy Pods Resources */,
+				4CAAD8DE1C13BBFB004ADF5C /* [CP] Embed Pods Frameworks */,
+				4CAAD8DF1C13BBFB004ADF5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,12 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CAAD8F61C13BC09004ADF5C /* Build configuration list for PBXNativeTarget "Cell Animations" */;
 			buildPhases = (
-				4CAAD8E51C13BC09004ADF5C /* Check Pods Manifest.lock */,
+				4CAAD8E51C13BC09004ADF5C /* [CP] Check Pods Manifest.lock */,
 				4CAAD8E61C13BC09004ADF5C /* Sources */,
 				4CAAD8EE1C13BC09004ADF5C /* Frameworks */,
 				4CAAD8F01C13BC09004ADF5C /* Resources */,
-				4CAAD8F41C13BC09004ADF5C /* Embed Pods Frameworks */,
-				4CAAD8F51C13BC09004ADF5C /* Copy Pods Resources */,
+				4CAAD8F41C13BC09004ADF5C /* [CP] Embed Pods Frameworks */,
+				4CAAD8F51C13BC09004ADF5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,8 +217,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Noondev;
+				TargetAttributes = {
+					4CAAD8CE1C13BBFB004ADF5C = {
+						LastSwiftMigration = 0830;
+					};
+					4CAAD8E41C13BC09004ADF5C = {
+						LastSwiftMigration = 0830;
+					};
+				};
 			};
 			buildConfigurationList = 4C79D33D1BE3145000E4EB66 /* Build configuration list for PBXProject "CollectionViewAnimations" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -261,29 +269,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4CAAD8CF1C13BBFB004ADF5C /* Check Pods Manifest.lock */ = {
+		4CAAD8CF1C13BBFB004ADF5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4CAAD8DE1C13BBFB004ADF5C /* Embed Pods Frameworks */ = {
+		4CAAD8DE1C13BBFB004ADF5C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,14 +299,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sticky Headers/Pods-Sticky Headers-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4CAAD8DF1C13BBFB004ADF5C /* Copy Pods Resources */ = {
+		4CAAD8DF1C13BBFB004ADF5C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,29 +314,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sticky Headers/Pods-Sticky Headers-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4CAAD8E51C13BC09004ADF5C /* Check Pods Manifest.lock */ = {
+		4CAAD8E51C13BC09004ADF5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4CAAD8F41C13BC09004ADF5C /* Embed Pods Frameworks */ = {
+		4CAAD8F41C13BC09004ADF5C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,14 +344,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cell Animations/Pods-Cell Animations-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4CAAD8F51C13BC09004ADF5C /* Copy Pods Resources */ = {
+		4CAAD8F51C13BC09004ADF5C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,8 +416,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -452,8 +462,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -472,6 +484,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -480,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8153AFA79F917E6EB3AD340 /* Pods-Sticky Headers.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Source/Common/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -487,6 +501,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noondev.StickyHeaders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -497,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF9379A0B0164F1C9C597A22 /* Pods-Sticky Headers.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Source/Common/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -504,6 +520,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noondev.StickyHeaders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -521,6 +538,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noondev.CellAnimations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -538,6 +556,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noondev.CellAnimations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;

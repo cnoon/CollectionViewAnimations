@@ -9,7 +9,7 @@
 import Foundation
 
 struct Number {
-    static func random(from from: Int, to: Int) -> Int {
+    static func random(from: Int, to: Int) -> Int {
         guard from < to else { fatalError("`from` MUST be less than `to`") }
         let delta = UInt32(to + 1 - from)
 

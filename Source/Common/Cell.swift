@@ -21,15 +21,15 @@ class ContentCell: UICollectionViewCell {
 
         label = {
             let label = UILabel()
-            label.font = UIFont.systemFontOfSize(20)
-            label.textColor = UIColor.whiteColor()
+            label.font = UIFont.systemFont(ofSize: 20)
+            label.textColor = UIColor.white
 
             return label
         }()
 
         contentView.addSubview(label)
 
-        label.snp_makeConstraints { make in
+        label.snp.makeConstraints { make in
             make.center.equalTo(contentView)
         }
     }
@@ -46,8 +46,8 @@ class ContentCell: UICollectionViewCell {
 
     // MARK: Layout
 
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
-        super.applyLayoutAttributes(layoutAttributes)
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
         layoutIfNeeded()
     }
 }
@@ -69,15 +69,15 @@ class SectionHeaderCell: UICollectionReusableView {
 
         label = {
             let label = UILabel()
-            label.font = UIFont.boldSystemFontOfSize(14)
-            label.textColor = UIColor.whiteColor()
+            label.font = UIFont.boldSystemFont(ofSize: 14)
+            label.textColor = UIColor.white
 
             return label
         }()
 
         addSubview(label)
 
-        label.snp_makeConstraints { make in
+        label.snp.makeConstraints { make in
             make.leading.equalTo(self).offset(20)
             make.trailing.equalTo(self).offset(-20)
             make.centerY.equalTo(self)
@@ -90,8 +90,8 @@ class SectionHeaderCell: UICollectionReusableView {
 
     // MARK: Layout
 
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
-        super.applyLayoutAttributes(layoutAttributes)
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
         layoutIfNeeded()
     }
 }

@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     // MARK: Initialization
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.colors = {
             var colorsBySection: [[UIColor]] = []
 
@@ -49,15 +49,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         collectionView = {
-            let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
-            collectionView.backgroundColor = UIColor.whiteColor()
+            let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+            collectionView.backgroundColor = UIColor.white
 
             collectionView.dataSource = self
             collectionView.delegate = self
 
-            collectionView.registerClass(ContentCell.self, forCellWithReuseIdentifier: ContentCell.reuseIdentifier)
+            collectionView.register(ContentCell.self, forCellWithReuseIdentifier: ContentCell.reuseIdentifier)
 
-            collectionView.registerClass(
+            collectionView.register(
                 SectionHeaderCell.self,
                 forSupplementaryViewOfKind: SectionHeaderCell.kind,
                 withReuseIdentifier: SectionHeaderCell.reuseIdentifier
@@ -68,14 +68,14 @@ class ViewController: UIViewController {
 
         view.addSubview(collectionView)
 
-        collectionView.snp_makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
     }
 
     // MARK: Status Bar
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 }
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(
-        collectionView: UICollectionView,
+        _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         referenceSizeForHeaderInSection section: Int)
         -> CGSize
@@ -92,18 +92,18 @@ extension ViewController: UICollectionViewDataSource {
         return CGSize(width: collectionView.bounds.width, height: 40.0)
     }
 
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return colors.count
     }
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colors[section].count
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            ContentCell.reuseIdentifier,
-            forIndexPath: indexPath
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ContentCell.reuseIdentifier,
+            for: indexPath
         ) as! ContentCell
 
         UIView.performWithoutAnimation {
@@ -115,14 +115,14 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     func collectionView(
-        collectionView: UICollectionView,
+        _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
-        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
+        at indexPath: IndexPath) -> UICollectionReusableView
     {
-        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(
-            SectionHeaderCell.kind,
+        let cell = collectionView.dequeueReusableSupplementaryView(
+            ofKind: SectionHeaderCell.kind,
             withReuseIdentifier: SectionHeaderCell.reuseIdentifier,
-            forIndexPath: indexPath
+            for: indexPath
         ) as! SectionHeaderCell
 
         cell.label.text = "Section \(indexPath.section)"
@@ -134,13 +134,13 @@ extension ViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension ViewController: UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         layout.selectedCellIndexPath = layout.selectedCellIndexPath == indexPath ? nil : indexPath
 
         let bounceEnabled = false
 
-        UIView.animateWithDuration(
-            0.4,
+        UIView.animate(
+            withDuration: 0.4,
             delay: 0.0,
             usingSpringWithDamping: bounceEnabled ? 0.5 : 1.0,
             initialSpringVelocity: bounceEnabled ? 2.0 : 0.0,
