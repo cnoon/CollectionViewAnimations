@@ -28,21 +28,7 @@
 #endif
 
 
-internal enum ConstraintRelation : Int {
-    case equal = 1
-    case lessThanOrEqual
-    case greaterThanOrEqual
-    
-    internal var layoutRelation: LayoutRelation {
-        get {
-            switch(self) {
-            case .equal:
-                return .equal
-            case .lessThanOrEqual:
-                return .lessThanOrEqual
-            case .greaterThanOrEqual:
-                return .greaterThanOrEqual
-            }
-        }
-    }
-}
+#if os(iOS) || os(tvOS)
+    @available(iOS 11.0, tvOS 11.0, *)
+    public typealias ConstraintDirectionalInsets = NSDirectionalEdgeInsets
+#endif
