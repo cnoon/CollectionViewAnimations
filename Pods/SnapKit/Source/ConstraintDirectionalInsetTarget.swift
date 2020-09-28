@@ -22,27 +22,28 @@
 //  THE SOFTWARE.
 
 #if os(iOS) || os(tvOS)
-    import UIKit
+import UIKit
 #else
-    import AppKit
+import AppKit
 #endif
 
-
-internal enum ConstraintRelation : Int {
-    case equal = 1
-    case lessThanOrEqual
-    case greaterThanOrEqual
-    
-    internal var layoutRelation: LayoutRelation {
-        get {
-            switch(self) {
-            case .equal:
-                return .equal
-            case .lessThanOrEqual:
-                return .lessThanOrEqual
-            case .greaterThanOrEqual:
-                return .greaterThanOrEqual
-            }
-        }
-    }
+#if os(iOS) || os(tvOS)
+public protocol ConstraintDirectionalInsetTarget: ConstraintConstantTarget {
 }
+
+@available(iOS 11.0, tvOS 11.0, *)
+extension ConstraintDirectionalInsets: ConstraintDirectionalInsetTarget {
+}
+
+extension ConstraintDirectionalInsetTarget {
+
+  @available(iOS 11.0, tvOS 11.0, *)
+  internal var constraintDirectionalInsetTargetValue: ConstraintDirectionalInsets {
+    if let amount = self as? ConstraintDirectionalInsets {
+      return amount
+    } else {
+      return ConstraintDirectionalInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+    }
+  }
+}
+#endif

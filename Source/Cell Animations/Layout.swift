@@ -15,65 +15,65 @@ class Layout: UICollectionViewLayout {
     var previousAttributes: [UICollectionViewLayoutAttributes] = []
     var currentAttributes: [UICollectionViewLayoutAttributes] = []
 
-    var contentSize = CGSizeZero
-    var selectedCellIndexPath: NSIndexPath?
+    var contentSize = CGSize.zero
+    var selectedCellIndexPath: IndexPath?
 
     // MARK: - Preparation
 
-    override func prepareLayout() {
-        super.prepareLayout()
+    override func prepare() {
+        super.prepare()
 
         previousAttributes = currentAttributes
 
-        contentSize = CGSizeZero
+        contentSize = CGSize.zero
         currentAttributes = []
 
         if let collectionView = collectionView {
-            let itemCount = collectionView.numberOfItemsInSection(0)
+            let itemCount = collectionView.numberOfItems(inSection: 0)
             let width = collectionView.bounds.size.width
             var y: CGFloat = 0
 
             for itemIndex in 0..<itemCount {
-                let indexPath = NSIndexPath(forItem: itemIndex, inSection: 0)
-                let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+                let indexPath = IndexPath(item: itemIndex, section: 0)
+                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 let size = CGSize(
                     width: width,
                     height: itemIndex == selectedCellIndexPath?.item ? 300.0 : 100.0
                 )
 
-                attributes.frame = CGRectMake(0, y, width, size.height)
+                attributes.frame = CGRect(x: 0, y: y, width: width, height: size.height)
 
                 currentAttributes.append(attributes)
 
                 y += size.height
             }
 
-            contentSize = CGSizeMake(width, y)
+            contentSize = CGSize(width: width, height: y)
         }
     }
 
     // MARK: - Layout Attributes
 
-    override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+    override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return previousAttributes[itemIndexPath.item]
     }
 
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return currentAttributes[indexPath.item]
     }
 
-    override func finalLayoutAttributesForDisappearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        return layoutAttributesForItemAtIndexPath(itemIndexPath)
+    override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        return layoutAttributesForItem(at: itemIndexPath)
     }
 
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return currentAttributes.filter { CGRectIntersectsRect(rect, $0.frame) }
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        return currentAttributes.filter { rect.intersects($0.frame) }
     }
 
     // MARK: - Invalidation
 
-    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
-        if let oldBounds = collectionView?.bounds where !CGSizeEqualToSize(oldBounds.size, newBounds.size) {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        if let oldBounds = collectionView?.bounds, !oldBounds.size.equalTo(newBounds.size) {
             return true
         }
 
@@ -82,16 +82,16 @@ class Layout: UICollectionViewLayout {
 
     // MARK: - Collection View Info
 
-    override func collectionViewContentSize() -> CGSize {
+    override var collectionViewContentSize: CGSize {
         return contentSize
     }
 
-    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint) -> CGPoint {
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         guard let selectedCellIndexPath = selectedCellIndexPath else { return proposedContentOffset }
 
         var finalContentOffset = proposedContentOffset
 
-        if let frame = layoutAttributesForItemAtIndexPath(selectedCellIndexPath)?.frame {
+        if let frame = layoutAttributesForItem(at: selectedCellIndexPath as IndexPath)?.frame {
             let collectionViewHeight = collectionView?.bounds.size.height ?? 0
 
             let collectionViewTop = proposedContentOffset.y
@@ -101,9 +101,9 @@ class Layout: UICollectionViewLayout {
             let cellBottom = cellTop + frame.size.height
 
             if cellBottom > collectionViewBottom {
-                finalContentOffset = CGPointMake(0.0, collectionViewTop + (cellBottom - collectionViewBottom))
+                finalContentOffset = CGPoint(x: 0.0, y: collectionViewTop + (cellBottom - collectionViewBottom))
             } else if cellTop < collectionViewTop {
-                finalContentOffset = CGPointMake(0.0, collectionViewTop - (collectionViewTop - cellTop))
+                finalContentOffset = CGPoint(x: 0.0, y: collectionViewTop - (collectionViewTop - cellTop))
             }
         }
 
